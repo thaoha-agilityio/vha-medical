@@ -1,0 +1,1593 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppointmentsHistory Component should render correctly when appointments value is empty 1`] = `
+<div>
+  <div
+    class="flex flex-col relative overflow-hidden h-auto text-foreground box-border outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium rounded-large transition-transform-background motion-reduce:transition-none w-full px-4 py-6 bg-background-200"
+    tabindex="-1"
+  >
+    <div
+      class="flex justify-between items-center"
+    >
+      <p
+        class="text-xl font-bold text-primary-100"
+      >
+        History
+      </p>
+      <div
+        class="group flex flex-col w-full transition-background motion-reduce:transition-none !duration-150 group relative justify-end data-[has-label=true]:mt-[calc(theme(fontSize.small)_+_10px)] max-w-[102px] max-h-[36px]"
+        data-filled="true"
+        data-slot="base"
+      >
+        <div
+          aria-hidden="true"
+          data-a11y-ignore="aria-hidden-focus"
+          data-testid="hidden-select-container"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <input
+            style="font-size: 16px;"
+            tabindex="0"
+            type="text"
+            value=""
+          />
+          <label>
+            <select
+              size="4"
+              tabindex="-1"
+              title=""
+            >
+              <option />
+              <option
+                value="all"
+              >
+                All
+              </option>
+              <option
+                value="new"
+              >
+                New
+              </option>
+              <option
+                value="meeting"
+              >
+                Meeting
+              </option>
+              <option
+                value="cancelled"
+              >
+                Cancelled
+              </option>
+            </select>
+          </label>
+        </div>
+        <div
+          class="w-full flex flex-col max-w-[102px] max-h-[36px]"
+          data-slot="mainWrapper"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Status"
+            aria-labelledby="react-aria-:r2i: react-aria-:r2d:"
+            class="relative gap-3 w-full inline-flex flex-row items-center shadow-sm tap-highlight-transparent group-data-[focus=true]:bg-default-100 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-2.5 py-2 h-[46px] rounded-medium bg-background-100 shadow-stack border-1 outline-offset-0 data-[focus=true]:border-green data-[focus=true]:border-1 data-[focus=true]:bg-background-100 data-[hover=true]:bg-background-100 group-data-[invalid=true]:!border-danger-100 min-h-[36px]"
+            data-slot="trigger"
+            id="react-aria-:r2d:"
+            type="button"
+          >
+            <div
+              class="inline-flex h-full min-h-4 items-center gap-1.5 box-border text-xs leading-[18px] group-data-[invalid=true]:!text-danger-100 w-[80px]"
+              data-slot="innerWrapper"
+            >
+              <span
+                class="w-full text-left rtl:text-right truncate group-data-[has-value=true]:text-default-foreground text-xs group-data-[invalid=true]:!text-danger-100 text-primary-100 font-medium"
+                data-slot="value"
+                id="react-aria-:r2i:"
+              >
+                Status
+              </span>
+            </div>
+            <svg
+              aria-hidden="true"
+              class="absolute end-3 w-4 h-4 transition-transform duration-150 ease motion-reduce:transition-none data-[open=true]:rotate-180 text-primary-100"
+              data-slot="selectorIcon"
+              fill="none"
+              focusable="false"
+              height="1em"
+              role="presentation"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="m6 9 6 6 6-6"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col items-center"
+    >
+      <div
+        class="flex flex-col relative gap-4 w-full"
+      >
+        <div
+          class="z-0 flex flex-col relative justify-between gap-4 overflow-auto rounded-large w-full bg-transparent-200 shadow-none p-1"
+        >
+          <table
+            aria-describedby=""
+            aria-label="Table"
+            class="min-w-full h-auto table-auto w-full"
+            id="appointments-history"
+            role="grid"
+            tabindex="0"
+          >
+            <thead
+              class="[&>tr]:first:rounded-lg hidden"
+              role="rowgroup"
+            >
+              <tr
+                class="group outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2"
+                role="row"
+              >
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="senderId"
+                  id="appointments-history-senderId"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Sender
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="durationTime"
+                  id="appointments-history-durationTime"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Duration time
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="startTime"
+                  id="appointments-history-startTime"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Start time
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="status"
+                  id="appointments-history-status"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Status
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="actions"
+                  id="appointments-history-actions"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Actions
+                </th>
+              </tr>
+              <tr
+                aria-hidden="true"
+                class="w-px h-px block"
+                style="margin-left: 0.25rem; margin-top: 0.25rem;"
+                tabindex="-1"
+              />
+            </thead>
+            <tbody
+              data-empty="true"
+              role="rowgroup"
+            >
+              <tr
+                role="row"
+              >
+                <td
+                  class="align-middle text-center text-primary-100 text-xl font-medium h-[152px] pb-4"
+                  colspan="5"
+                  role="gridcell"
+                >
+                  Result Not Found
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AppointmentsHistory Component should render correctly with admin role when have appointments value 1`] = `
+<div>
+  <div
+    class="flex flex-col relative overflow-hidden h-auto text-foreground box-border outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium rounded-large transition-transform-background motion-reduce:transition-none w-full px-4 py-6 bg-background-200"
+    tabindex="-1"
+  >
+    <div
+      class="flex justify-between items-center"
+    >
+      <p
+        class="text-xl font-bold text-primary-100"
+      >
+        History
+      </p>
+      <div
+        class="group flex flex-col w-full transition-background motion-reduce:transition-none !duration-150 group relative justify-end data-[has-label=true]:mt-[calc(theme(fontSize.small)_+_10px)] max-w-[102px] max-h-[36px]"
+        data-filled="true"
+        data-slot="base"
+      >
+        <div
+          aria-hidden="true"
+          data-a11y-ignore="aria-hidden-focus"
+          data-testid="hidden-select-container"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <input
+            style="font-size: 16px;"
+            tabindex="0"
+            type="text"
+            value=""
+          />
+          <label>
+            <select
+              size="4"
+              tabindex="-1"
+              title=""
+            >
+              <option />
+              <option
+                value="all"
+              >
+                All
+              </option>
+              <option
+                value="new"
+              >
+                New
+              </option>
+              <option
+                value="meeting"
+              >
+                Meeting
+              </option>
+              <option
+                value="cancelled"
+              >
+                Cancelled
+              </option>
+            </select>
+          </label>
+        </div>
+        <div
+          class="w-full flex flex-col max-w-[102px] max-h-[36px]"
+          data-slot="mainWrapper"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Status"
+            aria-labelledby="react-aria-:r1q: react-aria-:r1l:"
+            class="relative gap-3 w-full inline-flex flex-row items-center shadow-sm tap-highlight-transparent group-data-[focus=true]:bg-default-100 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-2.5 py-2 h-[46px] rounded-medium bg-background-100 shadow-stack border-1 outline-offset-0 data-[focus=true]:border-green data-[focus=true]:border-1 data-[focus=true]:bg-background-100 data-[hover=true]:bg-background-100 group-data-[invalid=true]:!border-danger-100 min-h-[36px]"
+            data-slot="trigger"
+            id="react-aria-:r1l:"
+            type="button"
+          >
+            <div
+              class="inline-flex h-full min-h-4 items-center gap-1.5 box-border text-xs leading-[18px] group-data-[invalid=true]:!text-danger-100 w-[80px]"
+              data-slot="innerWrapper"
+            >
+              <span
+                class="w-full text-left rtl:text-right truncate group-data-[has-value=true]:text-default-foreground text-xs group-data-[invalid=true]:!text-danger-100 text-primary-100 font-medium"
+                data-slot="value"
+                id="react-aria-:r1q:"
+              >
+                Status
+              </span>
+            </div>
+            <svg
+              aria-hidden="true"
+              class="absolute end-3 w-4 h-4 transition-transform duration-150 ease motion-reduce:transition-none data-[open=true]:rotate-180 text-primary-100"
+              data-slot="selectorIcon"
+              fill="none"
+              focusable="false"
+              height="1em"
+              role="presentation"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="m6 9 6 6 6-6"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col items-center"
+    >
+      <div
+        class="flex flex-col relative gap-4 w-full"
+      >
+        <div
+          class="z-0 flex flex-col relative justify-between gap-4 overflow-auto rounded-large w-full bg-transparent-200 shadow-none p-1"
+        >
+          <table
+            aria-describedby=""
+            aria-label="Table"
+            class="min-w-full h-auto table-auto w-full"
+            id="appointments-history"
+            role="grid"
+            tabindex="0"
+          >
+            <thead
+              class="[&>tr]:first:rounded-lg hidden"
+              role="rowgroup"
+            >
+              <tr
+                class="group outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2"
+                role="row"
+              >
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="senderId"
+                  id="appointments-history-senderId"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Sender
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="receiverId"
+                  id="appointments-history-receiverId"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Receiver
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="durationTime"
+                  id="appointments-history-durationTime"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Duration time
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="startTime"
+                  id="appointments-history-startTime"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Start time
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="status"
+                  id="appointments-history-status"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Status
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="actions"
+                  id="appointments-history-actions"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Actions
+                </th>
+              </tr>
+              <tr
+                aria-hidden="true"
+                class="w-px h-px block"
+                style="margin-left: 0.25rem; margin-top: 0.25rem;"
+                tabindex="-1"
+              />
+            </thead>
+            <tbody
+              role="rowgroup"
+            >
+              <tr
+                aria-labelledby="appointments-history-1-senderId"
+                class="group outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2"
+                data-first="true"
+                data-key="1"
+                role="row"
+                tabindex="-1"
+              >
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-senderId"
+                  headers="appointments-history-senderId"
+                  id="appointments-history-1-senderId"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex gap-2 items-center"
+                  >
+                    <span
+                      class="overflow-hidden outline-none rounded-full ring-offset-background dark:ring-offset-background-dark shrink-0 min-w-8 w-8 h-8 bg-undefined ring-offset-2 ring-1 ring-green false shrink-0 hidden sm:block"
+                      data-testid="avatar-container"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt=""
+                        class="aspect-square"
+                        data-nimg="1"
+                        decoding="async"
+                        fetchpriority="high"
+                        height="48"
+                        src="http://localhost/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75"
+                        srcset="/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=48&q=75 1x, /_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75 2x"
+                        style="color: transparent; object-fit: cover; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+                        width="48"
+                      />
+                    </span>
+                    <p
+                      class="text-primary-100 font-medium text-sm overflow-hidden max-w-[65px] md:max-w-[90px] lg:max-w-full"
+                    >
+                      Alex Stanton
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-receiverId"
+                  headers="appointments-history-receiverId"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex gap-2 items-center"
+                  >
+                    <span
+                      class="overflow-hidden outline-none rounded-full ring-offset-background dark:ring-offset-background-dark shrink-0 min-w-8 w-8 h-8 bg-undefined ring-offset-2 ring-1 ring-green false shrink-0 hidden sm:block"
+                      data-testid="avatar-container"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt=""
+                        class="aspect-square"
+                        data-nimg="1"
+                        decoding="async"
+                        fetchpriority="high"
+                        height="48"
+                        src="http://localhost/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75"
+                        srcset="/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=48&q=75 1x, /_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75 2x"
+                        style="color: transparent; object-fit: cover; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+                        width="48"
+                      />
+                    </span>
+                    <p
+                      class="text-primary-100 font-medium text-sm overflow-hidden max-w-[65px] md:max-w-[90px] lg:max-w-full"
+                    >
+                      Jessica Jane
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-durationTime"
+                  headers="appointments-history-durationTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <p
+                    class="text-primary-100 font-medium text-xs hidden sm:block"
+                  >
+                    1:30 pm to 3:00 pm
+                  </p>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-startTime"
+                  headers="appointments-history-startTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="bg-success text-white dark:text-success dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center mb-2 md:hidden"
+                    >
+                      <p
+                        class="text-2xs font-semibold capitalize"
+                      >
+                        new
+                      </p>
+                    </div>
+                    <p
+                      class="text-primary-100 font-medium text-xs"
+                    >
+                      11 Sep 2026
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-status"
+                  headers="appointments-history-status"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="bg-success text-white dark:text-success dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center hidden md:block"
+                  >
+                    <p
+                      class="text-2xs font-semibold capitalize"
+                    >
+                      new
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-actions"
+                  headers="appointments-history-actions"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex justify-end"
+                  >
+                    <button
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-label="Dropdown button"
+                      class="group relative items-center box-border appearance-none select-none whitespace-nowrap font-normal overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none data-[hover=true]:opacity-hover z-10 aria-expanded:scale-[0.97] aria-expanded:opacity-70 subpixel-antialiased text-primary-100 border-1 data-[focus=true]:border-1 px-[2px] md:px-1 min-w-4 h-4 md:h-[26px] md:min-w-[26px] bg-background-100 rounded md:rounded-md data-[focus=true]:border-transparent data-[focus=true]:border-opacity-20 border-transparent border-opacity-20 flex justify-start capitalize"
+                      data-slot="trigger"
+                      id="react-aria-:r1t:"
+                      type="button"
+                    >
+                      <div
+                        class="text-primary-100 max-h-6 max-w-6"
+                      >
+                        <svg
+                          class="w-[11px] h-[11px] md:w-4 md:h-4"
+                          fill="none"
+                          viewBox="0 0 16 16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 6C6.90076 6 6 6.90076 6 8C6 9.09924 6.90076 10 8 10C9.09924 10 10 9.09924 10 8C10 6.90076 9.09924 6 8 6Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 0C6.90076 0 6 0.900764 6 2C6 3.09924 6.90076 4 8 4C9.09924 4 10 3.09924 10 2C10 0.900764 9.09924 0 8 0Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 12C6.90076 12 6 12.9008 6 14C6 15.0992 6.90076 16 8 16C9.09924 16 10 15.0992 10 14C10 12.9008 9.09924 12 8 12Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                aria-labelledby="appointments-history-2-senderId"
+                class="group outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2"
+                data-key="2"
+                data-middle="true"
+                data-odd="true"
+                role="row"
+                tabindex="-1"
+              >
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-senderId"
+                  headers="appointments-history-senderId"
+                  id="appointments-history-2-senderId"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex gap-2 items-center"
+                  >
+                    <span
+                      class="overflow-hidden outline-none rounded-full ring-offset-background dark:ring-offset-background-dark shrink-0 min-w-8 w-8 h-8 bg-undefined ring-offset-2 ring-1 ring-green false shrink-0 hidden sm:block"
+                      data-testid="avatar-container"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt=""
+                        class="aspect-square"
+                        data-nimg="1"
+                        decoding="async"
+                        fetchpriority="high"
+                        height="48"
+                        src="http://localhost/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75"
+                        srcset="/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=48&q=75 1x, /_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75 2x"
+                        style="color: transparent; object-fit: cover; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+                        width="48"
+                      />
+                    </span>
+                    <p
+                      class="text-primary-100 font-medium text-sm overflow-hidden max-w-[65px] md:max-w-[90px] lg:max-w-full"
+                    >
+                      Alex Stanton
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-receiverId"
+                  headers="appointments-history-receiverId"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex gap-2 items-center"
+                  >
+                    <span
+                      class="overflow-hidden outline-none rounded-full ring-offset-background dark:ring-offset-background-dark shrink-0 min-w-8 w-8 h-8 bg-undefined ring-offset-2 ring-1 ring-green false shrink-0 hidden sm:block"
+                      data-testid="avatar-container"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt=""
+                        class="aspect-square"
+                        data-nimg="1"
+                        decoding="async"
+                        fetchpriority="high"
+                        height="48"
+                        src="http://localhost/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75"
+                        srcset="/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=48&q=75 1x, /_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75 2x"
+                        style="color: transparent; object-fit: cover; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+                        width="48"
+                      />
+                    </span>
+                    <p
+                      class="text-primary-100 font-medium text-sm overflow-hidden max-w-[65px] md:max-w-[90px] lg:max-w-full"
+                    >
+                      ThangHq
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-durationTime"
+                  headers="appointments-history-durationTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <p
+                    class="text-primary-100 font-medium text-xs hidden sm:block"
+                  >
+                    9:00 am to 10:00 am
+                  </p>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-startTime"
+                  headers="appointments-history-startTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="bg-success text-white dark:text-success dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center mb-2 md:hidden"
+                    >
+                      <p
+                        class="text-2xs font-semibold capitalize"
+                      >
+                        new
+                      </p>
+                    </div>
+                    <p
+                      class="text-primary-100 font-medium text-xs"
+                    >
+                      12 Sep 2026
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-status"
+                  headers="appointments-history-status"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="bg-success text-white dark:text-success dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center hidden md:block"
+                  >
+                    <p
+                      class="text-2xs font-semibold capitalize"
+                    >
+                      new
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-actions"
+                  headers="appointments-history-actions"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex justify-end"
+                  >
+                    <button
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-label="Dropdown button"
+                      class="group relative items-center box-border appearance-none select-none whitespace-nowrap font-normal overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none data-[hover=true]:opacity-hover z-10 aria-expanded:scale-[0.97] aria-expanded:opacity-70 subpixel-antialiased text-primary-100 border-1 data-[focus=true]:border-1 px-[2px] md:px-1 min-w-4 h-4 md:h-[26px] md:min-w-[26px] bg-background-100 rounded md:rounded-md data-[focus=true]:border-transparent data-[focus=true]:border-opacity-20 border-transparent border-opacity-20 flex justify-start capitalize"
+                      data-slot="trigger"
+                      id="react-aria-:r20:"
+                      type="button"
+                    >
+                      <div
+                        class="text-primary-100 max-h-6 max-w-6"
+                      >
+                        <svg
+                          class="w-[11px] h-[11px] md:w-4 md:h-4"
+                          fill="none"
+                          viewBox="0 0 16 16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 6C6.90076 6 6 6.90076 6 8C6 9.09924 6.90076 10 8 10C9.09924 10 10 9.09924 10 8C10 6.90076 9.09924 6 8 6Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 0C6.90076 0 6 0.900764 6 2C6 3.09924 6.90076 4 8 4C9.09924 4 10 3.09924 10 2C10 0.900764 9.09924 0 8 0Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 12C6.90076 12 6 12.9008 6 14C6 15.0992 6.90076 16 8 16C9.09924 16 10 15.0992 10 14C10 12.9008 9.09924 12 8 12Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                aria-labelledby="appointments-history-3-senderId"
+                class="group outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2"
+                data-key="3"
+                data-last="true"
+                role="row"
+                tabindex="-1"
+              >
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 pt-3"
+                  data-key="table-row-cell-senderId"
+                  headers="appointments-history-senderId"
+                  id="appointments-history-3-senderId"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex gap-2 items-center"
+                  >
+                    <span
+                      class="overflow-hidden outline-none rounded-full ring-offset-background dark:ring-offset-background-dark shrink-0 min-w-8 w-8 h-8 bg-undefined ring-offset-2 ring-1 ring-green false shrink-0 hidden sm:block"
+                      data-testid="avatar-container"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt=""
+                        class="aspect-square"
+                        data-nimg="1"
+                        decoding="async"
+                        fetchpriority="high"
+                        height="48"
+                        src="http://localhost/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75"
+                        srcset="/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=48&q=75 1x, /_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75 2x"
+                        style="color: transparent; object-fit: cover; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+                        width="48"
+                      />
+                    </span>
+                    <p
+                      class="text-primary-100 font-medium text-sm overflow-hidden max-w-[65px] md:max-w-[90px] lg:max-w-full"
+                    >
+                      ThangHq
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 pt-3"
+                  data-key="table-row-cell-receiverId"
+                  headers="appointments-history-receiverId"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex gap-2 items-center"
+                  >
+                    <span
+                      class="overflow-hidden outline-none rounded-full ring-offset-background dark:ring-offset-background-dark shrink-0 min-w-8 w-8 h-8 bg-undefined ring-offset-2 ring-1 ring-green false shrink-0 hidden sm:block"
+                      data-testid="avatar-container"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt=""
+                        class="aspect-square"
+                        data-nimg="1"
+                        decoding="async"
+                        fetchpriority="high"
+                        height="48"
+                        src="http://localhost/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75"
+                        srcset="/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=48&q=75 1x, /_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75 2x"
+                        style="color: transparent; object-fit: cover; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+                        width="48"
+                      />
+                    </span>
+                    <p
+                      class="text-primary-100 font-medium text-sm overflow-hidden max-w-[65px] md:max-w-[90px] lg:max-w-full"
+                    >
+                      Alex Stanton
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 pt-3"
+                  data-key="table-row-cell-durationTime"
+                  headers="appointments-history-durationTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <p
+                    class="text-primary-100 font-medium text-xs hidden sm:block"
+                  >
+                    10:00 am to 11:00 am
+                  </p>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 pt-3"
+                  data-key="table-row-cell-startTime"
+                  headers="appointments-history-startTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="bg-warning text-white dark:text-warning dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center mb-2 md:hidden"
+                    >
+                      <p
+                        class="text-2xs font-semibold capitalize"
+                      >
+                        meeting
+                      </p>
+                    </div>
+                    <p
+                      class="text-primary-100 font-medium text-xs"
+                    >
+                      13 Sep 2024
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 pt-3"
+                  data-key="table-row-cell-status"
+                  headers="appointments-history-status"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="bg-warning text-white dark:text-warning dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center hidden md:block"
+                  >
+                    <p
+                      class="text-2xs font-semibold capitalize"
+                    >
+                      meeting
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 pt-3"
+                  data-key="table-row-cell-actions"
+                  headers="appointments-history-actions"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex justify-end"
+                  >
+                    <button
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-label="Dropdown button"
+                      class="group relative items-center box-border appearance-none select-none whitespace-nowrap font-normal overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none data-[hover=true]:opacity-hover z-10 aria-expanded:scale-[0.97] aria-expanded:opacity-70 subpixel-antialiased text-primary-100 border-1 data-[focus=true]:border-1 px-[2px] md:px-1 min-w-4 h-4 md:h-[26px] md:min-w-[26px] bg-background-100 rounded md:rounded-md data-[focus=true]:border-transparent data-[focus=true]:border-opacity-20 border-transparent border-opacity-20 flex justify-start capitalize"
+                      data-slot="trigger"
+                      id="react-aria-:r23:"
+                      type="button"
+                    >
+                      <div
+                        class="text-primary-100 max-h-6 max-w-6"
+                      >
+                        <svg
+                          class="w-[11px] h-[11px] md:w-4 md:h-4"
+                          fill="none"
+                          viewBox="0 0 16 16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 6C6.90076 6 6 6.90076 6 8C6 9.09924 6.90076 10 8 10C9.09924 10 10 9.09924 10 8C10 6.90076 9.09924 6 8 6Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 0C6.90076 0 6 0.900764 6 2C6 3.09924 6.90076 4 8 4C9.09924 4 10 3.09924 10 2C10 0.900764 9.09924 0 8 0Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 12C6.90076 12 6 12.9008 6 14C6 15.0992 6.90076 16 8 16C9.09924 16 10 15.0992 10 14C10 12.9008 9.09924 12 8 12Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AppointmentsHistory Component should render correctly with user role when have appointments value 1`] = `
+<div>
+  <div
+    class="flex flex-col relative overflow-hidden h-auto text-foreground box-border outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-medium rounded-large transition-transform-background motion-reduce:transition-none w-full px-4 py-6 bg-background-200"
+    tabindex="-1"
+  >
+    <div
+      class="flex justify-between items-center"
+    >
+      <p
+        class="text-xl font-bold text-primary-100"
+      >
+        History
+      </p>
+      <div
+        class="group flex flex-col w-full transition-background motion-reduce:transition-none !duration-150 group relative justify-end data-[has-label=true]:mt-[calc(theme(fontSize.small)_+_10px)] max-w-[102px] max-h-[36px]"
+        data-filled="true"
+        data-slot="base"
+      >
+        <div
+          aria-hidden="true"
+          data-a11y-ignore="aria-hidden-focus"
+          data-testid="hidden-select-container"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <input
+            style="font-size: 16px;"
+            tabindex="0"
+            type="text"
+            value=""
+          />
+          <label>
+            <select
+              size="4"
+              tabindex="-1"
+              title=""
+            >
+              <option />
+              <option
+                value="all"
+              >
+                All
+              </option>
+              <option
+                value="new"
+              >
+                New
+              </option>
+              <option
+                value="meeting"
+              >
+                Meeting
+              </option>
+              <option
+                value="cancelled"
+              >
+                Cancelled
+              </option>
+            </select>
+          </label>
+        </div>
+        <div
+          class="w-full flex flex-col max-w-[102px] max-h-[36px]"
+          data-slot="mainWrapper"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Status"
+            aria-labelledby="react-aria-:r12: react-aria-:rt:"
+            class="relative gap-3 w-full inline-flex flex-row items-center shadow-sm tap-highlight-transparent group-data-[focus=true]:bg-default-100 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-2.5 py-2 h-[46px] rounded-medium bg-background-100 shadow-stack border-1 outline-offset-0 data-[focus=true]:border-green data-[focus=true]:border-1 data-[focus=true]:bg-background-100 data-[hover=true]:bg-background-100 group-data-[invalid=true]:!border-danger-100 min-h-[36px]"
+            data-slot="trigger"
+            id="react-aria-:rt:"
+            type="button"
+          >
+            <div
+              class="inline-flex h-full min-h-4 items-center gap-1.5 box-border text-xs leading-[18px] group-data-[invalid=true]:!text-danger-100 w-[80px]"
+              data-slot="innerWrapper"
+            >
+              <span
+                class="w-full text-left rtl:text-right truncate group-data-[has-value=true]:text-default-foreground text-xs group-data-[invalid=true]:!text-danger-100 text-primary-100 font-medium"
+                data-slot="value"
+                id="react-aria-:r12:"
+              >
+                Status
+              </span>
+            </div>
+            <svg
+              aria-hidden="true"
+              class="absolute end-3 w-4 h-4 transition-transform duration-150 ease motion-reduce:transition-none data-[open=true]:rotate-180 text-primary-100"
+              data-slot="selectorIcon"
+              fill="none"
+              focusable="false"
+              height="1em"
+              role="presentation"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="m6 9 6 6 6-6"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col items-center"
+    >
+      <div
+        class="flex flex-col relative gap-4 w-full"
+      >
+        <div
+          class="z-0 flex flex-col relative justify-between gap-4 overflow-auto rounded-large w-full bg-transparent-200 shadow-none p-1"
+        >
+          <table
+            aria-describedby=""
+            aria-label="Table"
+            class="min-w-full h-auto table-auto w-full"
+            id="appointments-history"
+            role="grid"
+            tabindex="0"
+          >
+            <thead
+              class="[&>tr]:first:rounded-lg hidden"
+              role="rowgroup"
+            >
+              <tr
+                class="group outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2"
+                role="row"
+              >
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="senderId"
+                  id="appointments-history-senderId"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Sender
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="durationTime"
+                  id="appointments-history-durationTime"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Duration time
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="startTime"
+                  id="appointments-history-startTime"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Start time
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="status"
+                  id="appointments-history-status"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Status
+                </th>
+                <th
+                  class="group px-3 h-10 align-middle bg-default-100 whitespace-nowrap text-foreground-500 text-tiny font-semibold first:rounded-s-lg last:rounded-e-lg data-[sortable=true]:cursor-pointer data-[hover=true]:text-foreground-400 outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-start"
+                  data-key="actions"
+                  id="appointments-history-actions"
+                  role="columnheader"
+                  tabindex="-1"
+                >
+                  Actions
+                </th>
+              </tr>
+              <tr
+                aria-hidden="true"
+                class="w-px h-px block"
+                style="margin-left: 0.25rem; margin-top: 0.25rem;"
+                tabindex="-1"
+              />
+            </thead>
+            <tbody
+              role="rowgroup"
+            >
+              <tr
+                aria-labelledby="appointments-history-1-senderId"
+                class="group outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2"
+                data-first="true"
+                data-key="1"
+                role="row"
+                tabindex="-1"
+              >
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-senderId"
+                  headers="appointments-history-senderId"
+                  id="appointments-history-1-senderId"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex gap-2 items-center"
+                  >
+                    <span
+                      class="overflow-hidden outline-none rounded-full ring-offset-background dark:ring-offset-background-dark shrink-0 min-w-8 w-8 h-8 bg-undefined ring-offset-2 ring-1 ring-green false"
+                      data-testid="avatar-container"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt=""
+                        class="shrink-0 aspect-square"
+                        data-nimg="1"
+                        decoding="async"
+                        fetchpriority="high"
+                        height="48"
+                        src="http://localhost/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75"
+                        srcset="/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=48&q=75 1x, /_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75 2x"
+                        style="color: transparent; object-fit: cover; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+                        width="48"
+                      />
+                    </span>
+                    <p
+                      class="text-primary-100 font-medium text-sm overflow-hidden max-w-[65px] md:max-w-[90px] lg:max-w-full"
+                    >
+                      Alex Stanton
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-durationTime"
+                  headers="appointments-history-durationTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <p
+                    class="text-primary-100 font-medium text-xs hidden sm:block"
+                  >
+                    1:30 pm to 3:00 pm
+                  </p>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-startTime"
+                  headers="appointments-history-startTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="bg-success text-white dark:text-success dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center mb-2 md:hidden"
+                    >
+                      <p
+                        class="text-2xs font-semibold capitalize"
+                      >
+                        new
+                      </p>
+                    </div>
+                    <p
+                      class="text-primary-100 font-medium text-xs"
+                    >
+                      11 Sep 2026
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-status"
+                  headers="appointments-history-status"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="bg-success text-white dark:text-success dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center hidden md:block"
+                  >
+                    <p
+                      class="text-2xs font-semibold capitalize"
+                    >
+                      new
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-actions"
+                  headers="appointments-history-actions"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex justify-end"
+                  >
+                    <button
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-label="Dropdown button"
+                      class="group relative items-center box-border appearance-none select-none whitespace-nowrap font-normal overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none data-[hover=true]:opacity-hover z-10 aria-expanded:scale-[0.97] aria-expanded:opacity-70 subpixel-antialiased text-primary-100 border-1 data-[focus=true]:border-1 px-[2px] md:px-1 min-w-4 h-4 md:h-[26px] md:min-w-[26px] bg-background-100 rounded md:rounded-md data-[focus=true]:border-transparent data-[focus=true]:border-opacity-20 border-transparent border-opacity-20 flex justify-start capitalize"
+                      data-slot="trigger"
+                      id="react-aria-:r15:"
+                      type="button"
+                    >
+                      <div
+                        class="text-primary-100 max-h-6 max-w-6"
+                      >
+                        <svg
+                          class="w-[11px] h-[11px] md:w-4 md:h-4"
+                          fill="none"
+                          viewBox="0 0 16 16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 6C6.90076 6 6 6.90076 6 8C6 9.09924 6.90076 10 8 10C9.09924 10 10 9.09924 10 8C10 6.90076 9.09924 6 8 6Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 0C6.90076 0 6 0.900764 6 2C6 3.09924 6.90076 4 8 4C9.09924 4 10 3.09924 10 2C10 0.900764 9.09924 0 8 0Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 12C6.90076 12 6 12.9008 6 14C6 15.0992 6.90076 16 8 16C9.09924 16 10 15.0992 10 14C10 12.9008 9.09924 12 8 12Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                aria-labelledby="appointments-history-2-senderId"
+                class="group outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2"
+                data-key="2"
+                data-middle="true"
+                data-odd="true"
+                role="row"
+                tabindex="-1"
+              >
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-senderId"
+                  headers="appointments-history-senderId"
+                  id="appointments-history-2-senderId"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex gap-2 items-center"
+                  >
+                    <span
+                      class="overflow-hidden outline-none rounded-full ring-offset-background dark:ring-offset-background-dark shrink-0 min-w-8 w-8 h-8 bg-undefined ring-offset-2 ring-1 ring-green false"
+                      data-testid="avatar-container"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt=""
+                        class="shrink-0 aspect-square"
+                        data-nimg="1"
+                        decoding="async"
+                        fetchpriority="high"
+                        height="48"
+                        src="http://localhost/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75"
+                        srcset="/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=48&q=75 1x, /_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75 2x"
+                        style="color: transparent; object-fit: cover; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+                        width="48"
+                      />
+                    </span>
+                    <p
+                      class="text-primary-100 font-medium text-sm overflow-hidden max-w-[65px] md:max-w-[90px] lg:max-w-full"
+                    >
+                      Alex Stanton
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-durationTime"
+                  headers="appointments-history-durationTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <p
+                    class="text-primary-100 font-medium text-xs hidden sm:block"
+                  >
+                    9:00 am to 10:00 am
+                  </p>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-startTime"
+                  headers="appointments-history-startTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="bg-success text-white dark:text-success dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center mb-2 md:hidden"
+                    >
+                      <p
+                        class="text-2xs font-semibold capitalize"
+                      >
+                        new
+                      </p>
+                    </div>
+                    <p
+                      class="text-primary-100 font-medium text-xs"
+                    >
+                      12 Sep 2026
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-status"
+                  headers="appointments-history-status"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="bg-success text-white dark:text-success dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center hidden md:block"
+                  >
+                    <p
+                      class="text-2xs font-semibold capitalize"
+                    >
+                      new
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 py-3 border-0 border-primary-100 border-b border-opacity-10"
+                  data-key="table-row-cell-actions"
+                  headers="appointments-history-actions"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex justify-end"
+                  >
+                    <button
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-label="Dropdown button"
+                      class="group relative items-center box-border appearance-none select-none whitespace-nowrap font-normal overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none data-[hover=true]:opacity-hover z-10 aria-expanded:scale-[0.97] aria-expanded:opacity-70 subpixel-antialiased text-primary-100 border-1 data-[focus=true]:border-1 px-[2px] md:px-1 min-w-4 h-4 md:h-[26px] md:min-w-[26px] bg-background-100 rounded md:rounded-md data-[focus=true]:border-transparent data-[focus=true]:border-opacity-20 border-transparent border-opacity-20 flex justify-start capitalize"
+                      data-slot="trigger"
+                      id="react-aria-:r18:"
+                      type="button"
+                    >
+                      <div
+                        class="text-primary-100 max-h-6 max-w-6"
+                      >
+                        <svg
+                          class="w-[11px] h-[11px] md:w-4 md:h-4"
+                          fill="none"
+                          viewBox="0 0 16 16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 6C6.90076 6 6 6.90076 6 8C6 9.09924 6.90076 10 8 10C9.09924 10 10 9.09924 10 8C10 6.90076 9.09924 6 8 6Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 0C6.90076 0 6 0.900764 6 2C6 3.09924 6.90076 4 8 4C9.09924 4 10 3.09924 10 2C10 0.900764 9.09924 0 8 0Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 12C6.90076 12 6 12.9008 6 14C6 15.0992 6.90076 16 8 16C9.09924 16 10 15.0992 10 14C10 12.9008 9.09924 12 8 12Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                aria-labelledby="appointments-history-3-senderId"
+                class="group outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2"
+                data-key="3"
+                data-last="true"
+                role="row"
+                tabindex="-1"
+              >
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 pt-3"
+                  data-key="table-row-cell-senderId"
+                  headers="appointments-history-senderId"
+                  id="appointments-history-3-senderId"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex gap-2 items-center"
+                  >
+                    <span
+                      class="overflow-hidden outline-none rounded-full ring-offset-background dark:ring-offset-background-dark shrink-0 min-w-8 w-8 h-8 bg-undefined ring-offset-2 ring-1 ring-green false"
+                      data-testid="avatar-container"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt=""
+                        class="shrink-0 aspect-square"
+                        data-nimg="1"
+                        decoding="async"
+                        fetchpriority="high"
+                        height="48"
+                        src="http://localhost/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75"
+                        srcset="/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=48&q=75 1x, /_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75 2x"
+                        style="color: transparent; object-fit: cover; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+                        width="48"
+                      />
+                    </span>
+                    <p
+                      class="text-primary-100 font-medium text-sm overflow-hidden max-w-[65px] md:max-w-[90px] lg:max-w-full"
+                    >
+                      ThangHq
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 pt-3"
+                  data-key="table-row-cell-durationTime"
+                  headers="appointments-history-durationTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <p
+                    class="text-primary-100 font-medium text-xs hidden sm:block"
+                  >
+                    10:00 am to 11:00 am
+                  </p>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 pt-3"
+                  data-key="table-row-cell-startTime"
+                  headers="appointments-history-startTime"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="bg-warning text-white dark:text-warning dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center mb-2 md:hidden"
+                    >
+                      <p
+                        class="text-2xs font-semibold capitalize"
+                      >
+                        meeting
+                      </p>
+                    </div>
+                    <p
+                      class="text-primary-100 font-medium text-xs"
+                    >
+                      13 Sep 2024
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 pt-3"
+                  data-key="table-row-cell-status"
+                  headers="appointments-history-status"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="bg-warning text-white dark:text-warning dark:bg-opacity-20 w-[68px] px-2 rounded-md text-center hidden md:block"
+                  >
+                    <p
+                      class="text-2xs font-semibold capitalize"
+                    >
+                      meeting
+                    </p>
+                  </div>
+                </td>
+                <td
+                  class="relative align-middle whitespace-normal text-small font-normal [&>*]:z-1 [&>*]:relative outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 before:content-[''] before:absolute before:z-0 before:inset-0 before:opacity-0 data-[selected=true]:before:opacity-100 group-data-[disabled=true]:text-foreground-300 group-data-[disabled=true]:cursor-not-allowed before:bg-default/60 data-[selected=true]:text-default-foreground first:before:rounded-s-lg last:before:rounded-e-lg text-start p-0 pt-3"
+                  data-key="table-row-cell-actions"
+                  headers="appointments-history-actions"
+                  role="cell"
+                  tabindex="-1"
+                >
+                  <div
+                    class="flex justify-end"
+                  >
+                    <button
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-label="Dropdown button"
+                      class="group relative items-center box-border appearance-none select-none whitespace-nowrap font-normal overflow-hidden tap-highlight-transparent data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none data-[hover=true]:opacity-hover z-10 aria-expanded:scale-[0.97] aria-expanded:opacity-70 subpixel-antialiased text-primary-100 border-1 data-[focus=true]:border-1 px-[2px] md:px-1 min-w-4 h-4 md:h-[26px] md:min-w-[26px] bg-background-100 rounded md:rounded-md data-[focus=true]:border-transparent data-[focus=true]:border-opacity-20 border-transparent border-opacity-20 flex justify-start capitalize"
+                      data-slot="trigger"
+                      id="react-aria-:r1b:"
+                      type="button"
+                    >
+                      <div
+                        class="text-primary-100 max-h-6 max-w-6"
+                      >
+                        <svg
+                          class="w-[11px] h-[11px] md:w-4 md:h-4"
+                          fill="none"
+                          viewBox="0 0 16 16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 6C6.90076 6 6 6.90076 6 8C6 9.09924 6.90076 10 8 10C9.09924 10 10 9.09924 10 8C10 6.90076 9.09924 6 8 6Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 0C6.90076 0 6 0.900764 6 2C6 3.09924 6.90076 4 8 4C9.09924 4 10 3.09924 10 2C10 0.900764 9.09924 0 8 0Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M8 12C6.90076 12 6 12.9008 6 14C6 15.0992 6.90076 16 8 16C9.09924 16 10 15.0992 10 14C10 12.9008 9.09924 12 8 12Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
