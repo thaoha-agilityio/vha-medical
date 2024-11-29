@@ -10,8 +10,9 @@ import {
   ErrorResponse,
 } from '@/types';
 import {
-  API_ENDPOINT,
+  API_ROUTE_ENDPOINT,
   AVATAR_THUMBNAIL,
+  DOMAIN,
   EXCEPTION_ERROR_MESSAGE,
 } from '@/constants';
 import { signOut } from '@/config/auth';
@@ -23,12 +24,16 @@ export const login = async (
   body: LoginFormData,
 ): Promise<{ user: UserSession | null; error: string | null }> => {
   try {
-    const response = await apiClient.post<AuthResponse>(API_ENDPOINT.AUTH, {
-      body: {
-        identifier: body.identifier,
-        password: body.password,
+    const response = await apiClient.post<AuthResponse>(
+      API_ROUTE_ENDPOINT.LOGIN,
+      {
+        body: {
+          identifier: body.identifier,
+          password: body.password,
+        },
+        baseUrl: DOMAIN,
       },
-    });
+    );
 
     const { error, jwt, user } = response;
 
@@ -86,8 +91,9 @@ export const signup = async (
       error,
       user,
       jwt = '',
-    } = await apiClient.post<AuthResponse>(`${API_ENDPOINT.AUTH}/register`, {
+    } = await apiClient.post<AuthResponse>(API_ROUTE_ENDPOINT.SIGNUP, {
       body,
+      baseUrl: DOMAIN,
     });
 
     if (error && !user) {
