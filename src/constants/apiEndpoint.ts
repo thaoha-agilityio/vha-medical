@@ -1,5 +1,6 @@
 export const API_ENDPOINT = {
   AUTH: '/auth/local',
+  SIGN_UP: '/auth/local/register',
   APPOINTMENTS: '/appointments',
   NOTIFICATIONS: '/notifications',
   SPECIALTIES: '/specialties',
@@ -13,3 +14,10 @@ export const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api`;
 export const IMGBB_URL = `${process.env.NEXT_PUBLIC_IMGBB_URL}?key=${process.env.NEXT_PUBLIC_IMGBB_API_KEY}`;
 
 export const AUTH_TOKEN = process.env.NEXT_PUBLIC_AUTH_TOKEN;
+
+export const API_ROUTE_ENDPOINT = {
+  LOGIN: '/api/auth/login',
+  SIGNUP: '/api/auth/signup',
+};
+
+export const DOMAIN = process.env.DOMAIN;

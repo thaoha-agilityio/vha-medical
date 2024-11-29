@@ -8,6 +8,7 @@ interface IApiClient {
 
 interface RequestInitExtended extends Omit<RequestInit, 'body'> {
   body?: object | null;
+  baseUrl?: string;
 }
 
 export class ApiClient {
@@ -142,8 +143,10 @@ export class ApiClient {
     return data;
   }
 
-  fetchWithConfig(url: string, config?: RequestInit) {
-    return fetch(`${this.baseURL}${url}`, {
+  fetchWithConfig(url: string, config?: RequestInit & { baseUrl?: string }) {
+    const baseUrl = config?.baseUrl || this.baseURL;
+
+    return fetch(`${baseUrl}${url}`, {
       ...this.config,
       ...config,
       headers: {
