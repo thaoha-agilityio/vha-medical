@@ -8,7 +8,12 @@ import {
   UserModel,
   UserPayload,
 } from '@/types';
-import { API_ENDPOINT, EXCEPTION_ERROR_MESSAGE } from '@/constants';
+import {
+  API_ENDPOINT,
+  API_ROUTE_ENDPOINT,
+  DOMAIN,
+  EXCEPTION_ERROR_MESSAGE,
+} from '@/constants';
 import { revalidateTag } from 'next/cache';
 
 export const getUserLogged = async (
@@ -94,8 +99,9 @@ export const addUser = async (
 
     const { error = null, ...user } = await api.post<
       UserModel & { error: string | null }
-    >(`${API_ENDPOINT.USERS}`, {
+    >(`${API_ROUTE_ENDPOINT.USERS}`, {
       body: data,
+      baseUrl: DOMAIN,
     });
 
     if (error) {
