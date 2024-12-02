@@ -1,93 +1,207 @@
-# vha-medical-dashboard
+## Next.js 14+ practice for NextJS
 
+This is a [Next.js](https://nextjs.org/) big practice for NextJS built with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 
+### Overview
 
-## Getting started
+- Extent big practice [VHA](https://docs.google.com/document/d/1r8h1djOR2VNbIaVsH2V63S-ryJvfQVEI7SAft9D6vuM/edit) Next.js Medical Dashboard Plan
+- Refer the detailed design here: [Medical-dashboard](<https://www.figma.com/design/x7FFxxP8LceboLNxMiHU50/Medical-Dashboard-Web-(Community)?node-id=1-17937&node-type=FRAME&t=aV64V94sX5QDt2Oo-0>).
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+### Timeline
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- 3 weeks
 
-## Add your files
+### Target
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+This practice for NextJS includes:
+
+- ⚡ [Next.js](https://nextjs.org/) with App Router support
+- 🔥 Type checking [TypeScript](https://www.typescriptlang.org/)
+- 💎 Integrate with [Tailwind CSS](https://tailwindcss.com/)
+- [tailwind-merge](https://github.com/dcastil/tailwind-merge) for efficiently merge Tailwind CSS classes without style conflicts
+- ✅ Strict Mode for TypeScript and React 18
+- 📏 Linter with [ESLint](https://eslint.org/)
+- 💖 Code Formatter with [Prettier](https://prettier.io/)
+- 🦊 [Husky](https://github.com/typicode/husky) for Git Hooks
+- 🚫 [Lint-staged](https://github.com/lint-staged/lint-staged) for running linters on Git staged files
+- 🦺 Unit Testing with Jest and React Testing Library
+- ☂️ Code coverage with [V8](https://v8.dev/blog/javascript-code-coverage)
+- 🎉 Storybook for UI development
+
+### Features
+
+- Support dark/light mode
+
+- User can register new account
+
+- User can login with created account
+
+- User can see main dashboard (Skip all charts)
+
+- User can see a list of Chemists
+
+  - User can add/search/edit/delete a chemist
+
+- User can see a list of Appointments (UI the same as list in Statistics tab)
+
+  - User can add/search/edit/delete a appointment
+
+  - User can see notification for upcoming appointments
+
+### Technical Stack
+
+- Next [v14.2.5]
+
+- React [v18.3.1]
+
+- Typescript [v5.5.4]
+
+- Storybook [v8.1.2]
+
+- TailwindCss [v3.4.10]
+
+- [React Hook Form](https://react-hook-form.com/)
+
+- [Zustand](https://github.com/pmndrs/zustand)
+
+- [Zod](https://zod.dev/)
+
+- [Strapi](https://strapi.io/)
+
+- [NextUI](https://nextui.org/)
+
+## How to run
+
+### Prerequisites
+
+Make sure you install packages with correct version below:
+
+- [node v18.18.2+](https://nodejs.org/en/download/package-manager)
+- [pnpm 9.1.2+](https://pnpm.io/installation)
+
+- **Note:**:
+  - Please add `.env` into root of project source code, refer `.env.sample`.
+
+**clone** then use in your project
+
+Check and update config image hosting on `next.config.mjs` file follow [Next.js document](https://nextjs.org/docs/messages/next-image-unconfigured-host)
+
+### Get source code
+
+| Command                                                                           | Action                      |
+| :-------------------------------------------------------------------------------- | :-------------------------- |
+| `$ git clone https://gitlab.asoft-python.com/thang.hoquang/medical-dashboard.git` | Clone Repository with HTTPS |
+| `$ git clone git@gitlab.asoft-python.com:thang.hoquang/medical-dashboard.git`     | Clone Repository with SSH   |
+| `$ cd medical-dashboard`                                                          | Redirect to folder          |
+| `$ git checkout dev`                                                              | Checkout into "dev" branch  |
+
+### Build and Run app
+
+| Command            | Action                                     | Port                  |
+| :----------------- | :----------------------------------------- | :-------------------- |
+| `$ pnpm install`   | Install packages dependencies              | N/A                   |
+| `$ pnpm build`     | Build app with optimized production mode   | N/A                   |
+| `$ pnpm start`     | Starts the application in production mode. | http://localhost:3000 |
+| `$ pnpm dev`       | Run the app in development mode            | http://localhost:3000 |
+| `$ pnpm storybook` | Run Storybook.                             | http://localhost:6006 |
+| `$ pnpm test`      | Run Unit Test                              | N/A                   |
+| `$ pnpm coverage`  | Generate code coverage                     | N/A                   |
+
+### Project structure
+
+```shell
+.
+├── README.md                       # README file
+├── .github                         # Github action configuration
+├── .gitlab                         # Gitlab merge request configuration
+├── .husky                          # Husky configuration
+├── .storybook                      # Storybook folder
+├── .vscode                         # VSCode configuration
+├── patches                         # Patch package file
+├── public                          # Public assets folder
+├── src
+│   ├── actions                     # Next.js actions
+│   ├── app                         # Next.js App (App Router)
+│   ├── components                  # React components
+│   ├── config                      # Configuration of libraries
+│   ├── constants                   # App constants
+│   ├── context                     # App context
+│   ├── features                    # Feature components
+│   ├── hocs                        # Higher order components
+│   ├── hooks                       # Custom hooks
+│   ├── icons                       # Icons folder
+│   ├── mocks                       # App mock data
+│   ├── types                       # Model type definitions
+│   ├── services                    # Handle data with API: GET, POST, PUT, DELETE
+│   ├── types                       # Type definitions
+│   ├── themes                      # Custom tailwindCSS styles
+│   ├── utils                       # Utilities folder
+├── .editorconfig                   # Editor configuration
+├── .env.sample                     # Env sample
+├── .env.test                       # Env using for testing
+├── .eslintrc.json                  # ESLint configuration
+├── .gitignore                      # git ignore file
+├── .lintstagedrc                   # Lint-stage
+├── .prettierrc                     # Prettier configuration
+├── commitlint.config.js            # Commitlint configuration
+├── jest.config.ts                  # Jest configuration
+├── jest.setup.ts                   # Jest setup
+├── next.config.mjs                 # Next.js configuration
+├── next.config.mjs                 # Next.js configuration
+├── postcss.config.mjs              # Post CSS configuration
+├── tailwind.config.ts              # Tailwind CSS configuration
+├── tsconfig.json                   # TypeScript configuration
+├── tailwind.config.ts              # Tailwind CSS configuration
+├── pnpm-lock.yaml
+└── package.json
+```
+
+## Maintainers
+
+### Team size
+
+- 1 Developer:
+
+  - [Thao Ha](mailto:thao.ha@asnet.com.vn), Slack: thao.ha
+
+### Responsibilities
+
+- Reviewing and merging pull requests.
+
+- Managing and responding to issues.
+
+- Updating project documentation.
+
+- Ensuring the project is up-to-date with the latest standards and practices.
+
+#### Setup Api on local
+
+- Clone this repo: https://github.com/thanghoquang-agilityio/medical-dashboard-api
+- Run command pnpm i
+- Create an .env file with following sample:
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.asoft-python.com/thao.ha/vha-medical-dashboard.git
-git branch -M main
-git push -uf origin main
+  HOST=
+  PORT=
+  APP_KEYS=
+  API_TOKEN_SALT=
+  ADMIN_JWT_SECRET=
+  TRANSFER_TOKEN_SALT=
+  # Database
+  DATABASE_CLIENT=
+  DATABASE_FILENAME=
+  JWT_SECRET=
 ```
 
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.asoft-python.com/thao.ha/vha-medical-dashboard/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- Get the env value in [here](https://drive.google.com/file/d/152oDSQ9kp8BUxj7w--5x2oADeR6MY9Uh/view?usp=sharing).
+- Run pnpm develop
+- Open admin panel and register an admin account
+- Create an API token and replace it with the NEXT_PUBLIC_AUTH_TOKEN in web app
+- Go to **Settings** -> **API Tokens** and choose your token to set permissions : allow all access for **Chemist**, **Specialty**, **Upload**, **Users-permissions**.
+- Go to **Settings** -> **Users & Permissions plugin** -> **Roles** and set permissions:
+  - Allow all access for admin role
+  - Limit permissions for normal user
+    - Can not _delete_ and _updateUnpublished_ for **Appointment**
+    - Can not _delete_, _update_, _create_ and _updateUnpublished_ for **Chemist**
+    - Can only _find_ and _findOne_ for **Specialty**
+- Go to **Settings** -> **Users & Permissions plugin** -> **Advanced settings** and set default role for authenticated users to **Normal User**
