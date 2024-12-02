@@ -1,7 +1,12 @@
 import { revalidateTag } from 'next/cache';
 
 // Constants
-import { API_ENDPOINT, EXCEPTION_ERROR_MESSAGE } from '@/constants';
+import {
+  API_ENDPOINT,
+  API_ROUTE_ENDPOINT,
+  DOMAIN,
+  EXCEPTION_ERROR_MESSAGE,
+} from '@/constants';
 
 // Types
 import {
@@ -24,9 +29,11 @@ export const getNotifications = async ({
   try {
     const params = new URLSearchParams(searchParams);
     const api = await apiClient.apiClientSession();
+
     const url = decodeURIComponent(
-      `${API_ENDPOINT.NOTIFICATIONS}?${params.toString()}`,
+      `${API_ROUTE_ENDPOINT.NOTIFICATIONS}?${params.toString()}`,
     );
+
     const { data, meta, error } = await api.get<
       NotificationsResponse & { error?: string }
     >(url, {
@@ -35,6 +42,7 @@ export const getNotifications = async ({
         ...options.next,
         revalidate: 3600,
       },
+      baseUrl: DOMAIN,
     });
 
     if (error) {
@@ -65,10 +73,11 @@ export const addNotification = async (
     const { data, error } = await api.post<{
       data: NotificationResponse;
       error?: string;
-    }>(`${API_ENDPOINT.NOTIFICATIONS}`, {
+    }>(`${API_ROUTE_ENDPOINT.NOTIFICATIONS}`, {
       body: {
         data: notification,
       },
+      baseUrl: DOMAIN,
     });
 
     if (error) {
@@ -84,69 +93,6 @@ export const addNotification = async (
       error instanceof Error
         ? error.message
         : EXCEPTION_ERROR_MESSAGE.ADD('notification');
-
-    return { notification: null, error: errorMessage };
-  }
-};
-
-export const updateNotification = async (
-  id: string,
-  notification: NotificationPayload,
-): Promise<NotificationDataResponse> => {
-  try {
-    const api = await apiClient.apiClientSession();
-    const { data, error } = await api.put<{
-      data: NotificationResponse;
-      error?: string;
-    }>(`${API_ENDPOINT.NOTIFICATIONS}/${id}`, {
-      body: {
-        data: {
-          ...notification,
-        },
-      },
-    });
-
-    if (error) {
-      const errorResponse = JSON.parse(error) as ErrorResponse;
-      return { notification: null, error: errorResponse.error.message };
-    }
-
-    revalidateTag(API_ENDPOINT.NOTIFICATIONS);
-
-    return { notification: data, error: null };
-  } catch (error) {
-    const errorMessage =
-      error instanceof Error
-        ? error.message
-        : EXCEPTION_ERROR_MESSAGE.UPDATE('notification');
-
-    return { notification: null, error: errorMessage };
-  }
-};
-
-export const deleteNotification = async (
-  id: string,
-): Promise<NotificationDataResponse> => {
-  try {
-    const api = await apiClient.apiClientSession();
-    const { data, error } = await api.delete<{
-      data: NotificationResponse;
-      error?: string;
-    }>(`${API_ENDPOINT.NOTIFICATIONS}/${id}`);
-
-    if (error) {
-      const errorResponse = JSON.parse(error) as ErrorResponse;
-      return { notification: null, error: errorResponse.error.message };
-    }
-
-    revalidateTag(API_ENDPOINT.APPOINTMENTS);
-
-    return { notification: data, error: null };
-  } catch (error) {
-    const errorMessage =
-      error instanceof Error
-        ? error.message
-        : EXCEPTION_ERROR_MESSAGE.DELETE('notification');
 
     return { notification: null, error: errorMessage };
   }

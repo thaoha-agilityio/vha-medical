@@ -49,8 +49,12 @@ export class ApiClient {
     });
   }
 
-  async get<T>(url: string, config: RequestInit = {}): Promise<T> {
+  async get<T>(
+    url: string,
+    config: Omit<RequestInitExtended, 'body'> = {},
+  ): Promise<T> {
     const response = await this.fetchWithConfig(url, config);
+
     if (!response.ok) {
       const errorText = await response.text();
 
