@@ -9,7 +9,11 @@ import {
 } from '@/services';
 import { MOCK_APPOINTMENTS } from '@/mocks';
 import { AppointmentPayload } from '@/types';
-import { API_ENDPOINT, EXCEPTION_ERROR_MESSAGE } from '@/constants';
+import {
+  API_ROUTE_ENDPOINT,
+  DOMAIN,
+  EXCEPTION_ERROR_MESSAGE,
+} from '@/constants';
 
 jest.mock('next/cache');
 
@@ -40,7 +44,7 @@ describe('Appointment service tests', () => {
     });
 
     expect(mockGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.APPOINTMENTS}?`,
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}?`,
       expect.anything(),
     );
   });
@@ -65,7 +69,7 @@ describe('Appointment service tests', () => {
     });
 
     expect(mockGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.APPOINTMENTS}?`,
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}?`,
       expect.anything(),
     );
   });
@@ -83,7 +87,7 @@ describe('Appointment service tests', () => {
     });
 
     expect(mockGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.APPOINTMENTS}?`,
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}?`,
       expect.anything(),
     );
   });
@@ -107,11 +111,15 @@ describe('Appointment service tests', () => {
       error: null,
     });
 
-    expect(mockPost).toHaveBeenCalledWith(`${API_ENDPOINT.APPOINTMENTS}`, {
-      body: {
-        data: MOCK_APPOINTMENTS[0],
+    expect(mockPost).toHaveBeenCalledWith(
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}`,
+      {
+        body: {
+          data: MOCK_APPOINTMENTS[0],
+        },
+        baseUrl: DOMAIN,
       },
-    });
+    );
   });
 
   it('addAppointment should handle API errors correctly', async () => {
@@ -134,11 +142,15 @@ describe('Appointment service tests', () => {
       error: 'Failed to add appointment',
     });
 
-    expect(mockPost).toHaveBeenCalledWith(`${API_ENDPOINT.APPOINTMENTS}`, {
-      body: {
-        data: MOCK_APPOINTMENTS[0],
+    expect(mockPost).toHaveBeenCalledWith(
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}`,
+      {
+        body: {
+          data: MOCK_APPOINTMENTS[0],
+        },
+        baseUrl: DOMAIN,
       },
-    });
+    );
   });
 
   it('addAppointment should handle API reject errors correctly', async () => {
@@ -155,11 +167,15 @@ describe('Appointment service tests', () => {
       error: EXCEPTION_ERROR_MESSAGE.ADD('appointment'),
     });
 
-    expect(mockPost).toHaveBeenCalledWith(`${API_ENDPOINT.APPOINTMENTS}`, {
-      body: {
-        data: MOCK_APPOINTMENTS[0],
+    expect(mockPost).toHaveBeenCalledWith(
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}`,
+      {
+        body: {
+          data: MOCK_APPOINTMENTS[0],
+        },
+        baseUrl: DOMAIN,
       },
-    });
+    );
   });
 
   it('updateAppointment should update appointment correctly', async () => {
@@ -180,11 +196,15 @@ describe('Appointment service tests', () => {
       error: null,
     });
 
-    expect(mockPut).toHaveBeenCalledWith(`${API_ENDPOINT.APPOINTMENTS}/1`, {
-      body: {
-        data: MOCK_APPOINTMENTS[0],
+    expect(mockPut).toHaveBeenCalledWith(
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}/1`,
+      {
+        body: {
+          data: MOCK_APPOINTMENTS[0],
+        },
+        baseUrl: DOMAIN,
       },
-    });
+    );
   });
 
   it('updateAppointment should handle API errors correctly', async () => {
@@ -208,11 +228,15 @@ describe('Appointment service tests', () => {
       error: 'Failed to update appointment',
     });
 
-    expect(mockPut).toHaveBeenCalledWith(`${API_ENDPOINT.APPOINTMENTS}/1`, {
-      body: {
-        data: MOCK_APPOINTMENTS[0],
+    expect(mockPut).toHaveBeenCalledWith(
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}/1`,
+      {
+        body: {
+          data: MOCK_APPOINTMENTS[0],
+        },
+        baseUrl: DOMAIN,
       },
-    });
+    );
   });
 
   it('updateAppointment should handle API reject errors correctly', async () => {
@@ -230,11 +254,15 @@ describe('Appointment service tests', () => {
       error: EXCEPTION_ERROR_MESSAGE.UPDATE('appointment'),
     });
 
-    expect(mockPut).toHaveBeenCalledWith(`${API_ENDPOINT.APPOINTMENTS}/1`, {
-      body: {
-        data: MOCK_APPOINTMENTS[0],
+    expect(mockPut).toHaveBeenCalledWith(
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}/1`,
+      {
+        body: {
+          data: MOCK_APPOINTMENTS[0],
+        },
+        baseUrl: DOMAIN,
       },
-    });
+    );
   });
 
   it('deleteAppointment should delete appointment correctly', async () => {
@@ -252,7 +280,12 @@ describe('Appointment service tests', () => {
       error: null,
     });
 
-    expect(mockDelete).toHaveBeenCalledWith(`${API_ENDPOINT.APPOINTMENTS}/1`);
+    expect(mockDelete).toHaveBeenCalledWith(
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}/1`,
+      {
+        baseUrl: DOMAIN,
+      },
+    );
   });
 
   it('deleteAppointment should handle API errors correctly', async () => {
@@ -273,7 +306,12 @@ describe('Appointment service tests', () => {
       error: 'Failed to delete appointment',
     });
 
-    expect(mockDelete).toHaveBeenCalledWith(`${API_ENDPOINT.APPOINTMENTS}/1`);
+    expect(mockDelete).toHaveBeenCalledWith(
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}/1`,
+      {
+        baseUrl: DOMAIN,
+      },
+    );
   });
 
   it('deleteAppointment should handle API reject errors correctly', async () => {
@@ -288,6 +326,11 @@ describe('Appointment service tests', () => {
       error: EXCEPTION_ERROR_MESSAGE.DELETE('appointment'),
     });
 
-    expect(mockDelete).toHaveBeenCalledWith(`${API_ENDPOINT.APPOINTMENTS}/1`);
+    expect(mockDelete).toHaveBeenCalledWith(
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}/1`,
+      {
+        baseUrl: DOMAIN,
+      },
+    );
   });
 });
