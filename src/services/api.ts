@@ -129,7 +129,10 @@ export class ApiClient {
     return data;
   }
 
-  async delete<T>(url: string, config?: RequestInit): Promise<T> {
+  async delete<T>(
+    url: string,
+    config: Omit<RequestInitExtended, 'body'> = {},
+  ): Promise<T> {
     const response = await this.fetchWithConfig(url, {
       ...config,
       method: 'DELETE',
