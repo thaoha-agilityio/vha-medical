@@ -1,7 +1,12 @@
 import { revalidateTag } from 'next/cache';
 
 // Constants
-import { API_ENDPOINT, EXCEPTION_ERROR_MESSAGE } from '@/constants';
+import {
+  API_ENDPOINT,
+  API_ROUTE_ENDPOINT,
+  DOMAIN,
+  EXCEPTION_ERROR_MESSAGE,
+} from '@/constants';
 
 // Types
 import {
@@ -25,7 +30,7 @@ export const getAppointments = async ({
     const params = new URLSearchParams(searchParams);
     const api = await apiClient.apiClientSession();
     const url = decodeURIComponent(
-      `${API_ENDPOINT.APPOINTMENTS}?${params.toString()}`,
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}?${params.toString()}`,
     );
     const { data, meta, error } = await api.get<
       AppointmentsResponse & { error?: string }
@@ -35,6 +40,7 @@ export const getAppointments = async ({
         ...options.next,
         revalidate: 3600,
       },
+      baseUrl: DOMAIN,
     });
 
     if (error) {
@@ -62,13 +68,15 @@ export const addAppointment = async (
 ): Promise<AppointmentDataResponse> => {
   try {
     const api = await apiClient.apiClientSession();
+
     const { data, error } = await api.post<{
       data: AppointmentResponse;
       error?: string;
-    }>(`${API_ENDPOINT.APPOINTMENTS}`, {
+    }>(`${API_ROUTE_ENDPOINT.APPOINTMENTS}`, {
       body: {
         data: appointment,
       },
+      baseUrl: DOMAIN,
     });
 
     if (error) {
@@ -99,12 +107,13 @@ export const updateAppointment = async (
     const { data, error } = await api.put<{
       data: AppointmentResponse;
       error?: string;
-    }>(`${API_ENDPOINT.APPOINTMENTS}/${id}`, {
+    }>(`${API_ROUTE_ENDPOINT.APPOINTMENTS}/${id}`, {
       body: {
         data: {
           ...appointment,
         },
       },
+      baseUrl: DOMAIN,
     });
 
     if (error) {
@@ -131,10 +140,13 @@ export const deleteAppointment = async (
 ): Promise<AppointmentDataResponse> => {
   try {
     const api = await apiClient.apiClientSession();
+
     const { data, error } = await api.delete<{
       data: AppointmentResponse;
       error?: string;
-    }>(`${API_ENDPOINT.APPOINTMENTS}/${id}`);
+    }>(`${API_ROUTE_ENDPOINT.APPOINTMENTS}/${id}`, {
+      baseUrl: DOMAIN,
+    });
 
     if (error) {
       const errorResponse = JSON.parse(error) as ErrorResponse;

@@ -21,6 +21,7 @@ export const API_ROUTE_ENDPOINT = {
   NOTIFICATIONS: '/api/notifications',
   CHEMISTS: '/api/chemists',
   USERS: '/api/users',
+  APPOINTMENTS: '/api/appointments',
 };
 
 export const DOMAIN = process.env.DOMAIN;
