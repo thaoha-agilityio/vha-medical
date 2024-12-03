@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server';
 
 import { API_ENDPOINT } from '@/constants';
 import { apiClient } from '@/services';
-import { ChemistsDataResponse } from '@/types';
+import { ChemistResponse, ChemistsDataResponse } from '@/types';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -17,20 +17,22 @@ export async function GET(req: NextRequest) {
     },
   );
 
-  console.log('Authorization', res);
-
   return Response.json(res);
 }
 
 export async function POST(req: Request) {
   const data = await req.json();
+  const token = req.headers.get('Authorization') || '';
 
-  const res = await apiClient.post<ChemistsDataResponse>(
-    API_ENDPOINT.CHEMISTS,
-    {
-      body: data,
+  const res = await apiClient.post<{
+    data: ChemistResponse;
+    error?: string;
+  }>(API_ENDPOINT.CHEMISTS, {
+    body: data,
+    headers: {
+      Authorization: token,
     },
-  );
+  });
 
   return Response.json(res);
 }
