@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionCard renders the receiveName, amount, time, and avatar correctly 1`] = `
+<div>
+  <div
+    class="flex items-center justify-between"
+  >
+    <div
+      class="flex items-center gap-4"
+    >
+      <span
+        class="overflow-hidden outline-none rounded-full ring-offset-background dark:ring-offset-background-dark shrink-0 min-w-12 w-12 h-12 bg-undefined ring-offset-0 ring-0 false"
+        data-testid="avatar-container"
+        tabindex="-1"
+      >
+        <img
+          alt=""
+          data-nimg="1"
+          decoding="async"
+          fetchpriority="high"
+          height="48"
+          src="http://localhost/_next/image?url=https%3A%2F%2Fexample.com%2Favatar.jpg&w=96&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Fexample.com%2Favatar.jpg&w=48&q=75 1x, /_next/image?url=https%3A%2F%2Fexample.com%2Favatar.jpg&w=96&q=75 2x"
+          style="color: transparent; object-fit: cover; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+          width="48"
+        />
+      </span>
+      <div>
+        <p
+          class="text-foreground text-sm mb-2 font-semibold"
+        >
+          John Doe
+        </p>
+        <p
+          class="text-primary-300 font-normal text-xs"
+        >
+          Just sent you $
+          100.00
+        </p>
+      </div>
+    </div>
+    <p
+      class="text-primary-300 font-normal text-xs"
+    >
+      2 hours ago
+    </p>
+  </div>
+</div>
+`;
