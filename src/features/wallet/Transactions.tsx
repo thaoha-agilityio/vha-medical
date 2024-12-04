@@ -1,10 +1,11 @@
 import { Text, TransactionCard } from '@/components/ui';
 import Pagination from '@/components/ui/Pagination';
+
 const Transactions = () => (
   <div className="w-full">
     <Text variant="title">Notifications</Text>
     {/* TODO: will replace with real data */}
-    <div className="flex flex-col  gap-[30px] mt-6">
+    <div className="flex flex-col  gap-[30px] mt-6 w-full">
       <TransactionCard
         receiveName={'Josep akbar'}
         amount={1000}

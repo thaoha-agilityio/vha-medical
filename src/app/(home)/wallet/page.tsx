@@ -24,8 +24,8 @@ export const metadata: Metadata = {
 
 const WalletPage = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-8  md:gap-0 mt-8 justify-between w-full">
-      <div className="flex gap-4">
+    <div className="flex flex-col xl:flex-row xl:gap-4 mt-8 justify-between w-full">
+      <div className="flex justify-between md:gap-4 mb-8">
         <StatisticCard title="VHA Token Balance" value={5392} />
         <StatisticCard
           title="Spending on VHA"

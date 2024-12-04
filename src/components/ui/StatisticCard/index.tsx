@@ -14,7 +14,7 @@ export const StatisticCard = ({
   value,
   customColor = 'bg-secondary-100',
 }: StatisticCardProps) => (
-  <section className="relative bg-background-200 py-[14px] px-5 rounded-xl w-[336px] h-[130px]">
+  <section className="relative bg-background-200 py-[14px] px-5 rounded-xl w-[160px] md:w-[336px] h-[130px]">
     <span
       data-testid="statistic-card"
       className={`absolute top-4 left-0 w-[5px] h-[53px] rounded-r-lg ${customColor}`}

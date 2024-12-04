@@ -6,7 +6,7 @@ import Transactions from './Transactions';
 import { formatNumber } from '@/utils';
 
 export const TotalBalance = () => (
-  <div className="flex flex-col gap-4 items-center rounded-xl bg-background-200 px-[18px] py-5 w-[330px] md:w-[450px] xl:w-[650px]">
+  <div className="flex flex-col gap-4 items-center rounded-xl bg-background-200 px-[18px] py-5 w-full xl:w-[650px]">
     <Text
       variant="title"
       size="md"
