@@ -7,16 +7,10 @@ import ChemistCard, { ChemistCardProps } from '.';
 import { MOCK_CHEMISTS_LIST } from '@/mocks/chemists';
 import { afterEach } from 'node:test';
 import { UserModel } from '@/types';
-import {
-  updateUnpublishAppointment,
-  updateUnpublishNotification,
-  updateUnpublishUser,
-} from '@/services';
+import { deleteUser } from '@/services';
 
 jest.mock('@/services', () => ({
-  updateUnpublishUser: jest.fn(),
-  updateUnpublishAppointment: jest.fn(),
-  updateUnpublishNotification: jest.fn(),
+  deleteUser: jest.fn(),
 }));
 describe('ChemistCard test cases', () => {
   const mockEdit = jest.fn();
@@ -27,11 +21,7 @@ describe('ChemistCard test cases', () => {
     isAdmin: true,
     onEdit: mockEdit,
   };
-  const mockUpdateUnpublishUser = updateUnpublishUser as jest.Mock;
-  const mockUpdateUnpublishAppointment =
-    updateUnpublishAppointment as jest.Mock;
-  const mockUpdateUnpublishNotification =
-    updateUnpublishNotification as jest.Mock;
+  const mockUpdateUnpublishUser = deleteUser as jest.Mock;
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -99,8 +89,6 @@ describe('ChemistCard test cases', () => {
     await act(() => fireEvent.click(confirmBtn));
 
     expect(mockUpdateUnpublishUser).toHaveBeenCalled();
-    expect(mockUpdateUnpublishAppointment).not.toHaveBeenCalled();
-    expect(mockUpdateUnpublishNotification).not.toHaveBeenCalled();
   });
 
   it('should invoke delete function when clicking delete button', async () => {
@@ -125,7 +113,5 @@ describe('ChemistCard test cases', () => {
     await act(() => fireEvent.click(confirmBtn));
 
     expect(mockUpdateUnpublishUser).toHaveBeenCalled();
-    expect(mockUpdateUnpublishAppointment).toHaveBeenCalled();
-    expect(mockUpdateUnpublishNotification).toHaveBeenCalled();
   });
 });
