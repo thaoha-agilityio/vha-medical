@@ -1,7 +1,11 @@
 import { MOCK_CHEMISTS_LIST } from '@/mocks';
 import { ApiClient, apiClient } from '../api';
 import { addUserToChemists, getChemists } from '../chemists';
-import { API_ENDPOINT, EXCEPTION_ERROR_MESSAGE } from '@/constants';
+import {
+  API_ROUTE_ENDPOINT,
+  DOMAIN,
+  EXCEPTION_ERROR_MESSAGE,
+} from '@/constants';
 
 jest.mock('next/cache');
 describe('Chemist services test cases', () => {
@@ -29,7 +33,7 @@ describe('Chemist services test cases', () => {
     });
 
     expect(mockGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.CHEMISTS}?`,
+      `${API_ROUTE_ENDPOINT.CHEMISTS}?`,
       expect.anything(),
     );
   });
@@ -55,7 +59,7 @@ describe('Chemist services test cases', () => {
     });
 
     expect(mockGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.CHEMISTS}?`,
+      `${API_ROUTE_ENDPOINT.CHEMISTS}?`,
       expect.anything(),
     );
   });
@@ -86,7 +90,7 @@ describe('Chemist services test cases', () => {
     });
 
     expect(mockGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.CHEMISTS}?`,
+      `${API_ROUTE_ENDPOINT.CHEMISTS}?`,
       expect.anything(),
     );
   });
@@ -106,7 +110,7 @@ describe('Chemist services test cases', () => {
       error: null,
     });
 
-    expect(mockPost).toHaveBeenCalledWith(`${API_ENDPOINT.CHEMISTS}`, {
+    expect(mockPost).toHaveBeenCalledWith(`${API_ROUTE_ENDPOINT.CHEMISTS}`, {
       body: {
         data: {
           users_permissions_user:
@@ -114,6 +118,7 @@ describe('Chemist services test cases', () => {
               .attributes.username,
         },
       },
+      baseUrl: DOMAIN,
     });
   });
 
@@ -160,7 +165,7 @@ describe('Chemist services test cases', () => {
       error: EXCEPTION_ERROR_MESSAGE.ADD('user to chemists'),
     });
 
-    expect(mockPost).toHaveBeenCalledWith(`${API_ENDPOINT.CHEMISTS}`, {
+    expect(mockPost).toHaveBeenCalledWith(`${API_ROUTE_ENDPOINT.CHEMISTS}`, {
       body: {
         data: {
           users_permissions_user:
@@ -168,6 +173,7 @@ describe('Chemist services test cases', () => {
               .attributes.username,
         },
       },
+      baseUrl: DOMAIN,
     });
   });
 });
