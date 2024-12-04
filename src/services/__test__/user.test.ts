@@ -17,7 +17,12 @@ import {
   updateUnpublishUser,
   updateUser,
 } from '../user';
-import { API_ENDPOINT, EXCEPTION_ERROR_MESSAGE } from '@/constants';
+import {
+  API_ENDPOINT,
+  API_ROUTE_ENDPOINT,
+  DOMAIN,
+  EXCEPTION_ERROR_MESSAGE,
+} from '@/constants';
 
 jest.mock('next/cache');
 describe('User services test cases', () => {
@@ -226,8 +231,9 @@ describe('User services test cases', () => {
       error: null,
     });
 
-    expect(mockPost).toHaveBeenCalledWith(`${API_ENDPOINT.USERS}`, {
+    expect(mockPost).toHaveBeenCalledWith(`${API_ROUTE_ENDPOINT.USERS}`, {
       body: MOCK_USER_PAYLOAD,
+      baseUrl: DOMAIN,
     });
   });
 
@@ -249,8 +255,9 @@ describe('User services test cases', () => {
       error: 'Something went wrong',
     });
 
-    expect(mockPost).toHaveBeenCalledWith(`${API_ENDPOINT.USERS}`, {
+    expect(mockPost).toHaveBeenCalledWith(`${API_ROUTE_ENDPOINT.USERS}`, {
       body: MOCK_USER_PAYLOAD,
+      baseUrl: DOMAIN,
     });
   });
 
@@ -277,8 +284,9 @@ describe('User services test cases', () => {
       error: EXCEPTION_ERROR_MESSAGE.ADD('user'),
     });
 
-    expect(mockPost).toHaveBeenCalledWith(`${API_ENDPOINT.USERS}`, {
+    expect(mockPost).toHaveBeenCalledWith(`${API_ROUTE_ENDPOINT.USERS}`, {
       body: MOCK_USER_PAYLOAD,
+      baseUrl: DOMAIN,
     });
   });
 
@@ -298,9 +306,10 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
       {
         body: MOCK_USER_PAYLOAD,
+        baseUrl: DOMAIN,
       },
     );
   });
@@ -324,9 +333,10 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
       {
         body: MOCK_USER_PAYLOAD,
+        baseUrl: DOMAIN,
       },
     );
   });
@@ -355,9 +365,10 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
       {
         body: MOCK_USER_PAYLOAD,
+        baseUrl: DOMAIN,
       },
     );
   });
@@ -444,7 +455,7 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
       expect.anything(),
     );
   });
@@ -468,7 +479,7 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
       expect.anything(),
     );
   });
@@ -497,7 +508,7 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.USERS}/${USER_OPTIONS[0].id}`,
       expect.anything(),
     );
   });
@@ -582,7 +593,10 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.NOTIFICATIONS}/unpublish/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.NOTIFICATIONS}/unpublish/${USER_OPTIONS[0].id}`,
+      {
+        baseUrl: DOMAIN,
+      },
     );
   });
 
@@ -604,7 +618,10 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.NOTIFICATIONS}/unpublish/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.NOTIFICATIONS}/unpublish/${USER_OPTIONS[0].id}`,
+      {
+        baseUrl: DOMAIN,
+      },
     );
   });
 
@@ -630,7 +647,10 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.NOTIFICATIONS}/unpublish/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.NOTIFICATIONS}/unpublish/${USER_OPTIONS[0].id}`,
+      {
+        baseUrl: DOMAIN,
+      },
     );
   });
 
@@ -648,7 +668,10 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.APPOINTMENTS}/unpublish/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}/unpublish/${USER_OPTIONS[0].id}`,
+      {
+        baseUrl: DOMAIN,
+      },
     );
   });
 
@@ -670,7 +693,10 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.APPOINTMENTS}/unpublish/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}/unpublish/${USER_OPTIONS[0].id}`,
+      {
+        baseUrl: DOMAIN,
+      },
     );
   });
 
@@ -696,7 +722,10 @@ describe('User services test cases', () => {
     });
 
     expect(mockPut).toHaveBeenCalledWith(
-      `${API_ENDPOINT.APPOINTMENTS}/unpublish/${USER_OPTIONS[0].id}`,
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}/unpublish/${USER_OPTIONS[0].id}`,
+      {
+        baseUrl: DOMAIN,
+      },
     );
   });
 });
