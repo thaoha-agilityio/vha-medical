@@ -8,7 +8,12 @@ import {
   UserModel,
   UserPayload,
 } from '@/types';
-import { API_ENDPOINT, EXCEPTION_ERROR_MESSAGE } from '@/constants';
+import {
+  API_ENDPOINT,
+  API_ROUTE_ENDPOINT,
+  DOMAIN,
+  EXCEPTION_ERROR_MESSAGE,
+} from '@/constants';
 import { revalidateTag } from 'next/cache';
 
 export const getUserLogged = async (
@@ -94,8 +99,9 @@ export const addUser = async (
 
     const { error = null, ...user } = await api.post<
       UserModel & { error: string | null }
-    >(`${API_ENDPOINT.USERS}`, {
+    >(`${API_ROUTE_ENDPOINT.USERS}`, {
       body: data,
+      baseUrl: DOMAIN,
     });
 
     if (error) {
@@ -126,8 +132,9 @@ export const updateUser = async (
 
     const { error = null, ...user } = await api.put<
       UserModel & { error: string | null }
-    >(`${API_ENDPOINT.USERS}/${id}`, {
+    >(`${API_ROUTE_ENDPOINT.USERS}/${id}`, {
       body: data,
+      baseUrl: DOMAIN,
     });
 
     if (error) {
@@ -219,10 +226,11 @@ export const updateUnpublishUser = async (
 
     const { error = null, ...user } = await api.put<
       UserModel & { error: string | null }
-    >(`${API_ENDPOINT.USERS}/${id}`, {
+    >(`${API_ROUTE_ENDPOINT.USERS}/${id}`, {
       body: {
         publishedAt: null,
       },
+      baseUrl: DOMAIN,
     });
 
     if (error) {
@@ -253,7 +261,8 @@ export const updateUnpublishNotification = async (
     const api = await apiClient.apiClientSession();
 
     const { error = null } = await api.put<{ error: string | null }>(
-      `${API_ENDPOINT.NOTIFICATIONS}/unpublish/${id}`,
+      `${API_ROUTE_ENDPOINT.NOTIFICATIONS}/unpublish/${id}`,
+      { baseUrl: DOMAIN },
     );
 
     if (error) {
@@ -281,7 +290,10 @@ export const updateUnpublishAppointment = async (
     const api = await apiClient.apiClientSession();
 
     const { error = null } = await api.put<{ error: string | null }>(
-      `${API_ENDPOINT.APPOINTMENTS}/unpublish/${id}`,
+      `${API_ROUTE_ENDPOINT.APPOINTMENTS}/unpublish/${id}`,
+      {
+        baseUrl: DOMAIN,
+      },
     );
 
     if (error) {
@@ -298,6 +310,40 @@ export const updateUnpublishAppointment = async (
       error instanceof Error
         ? error.message
         : EXCEPTION_ERROR_MESSAGE.UPDATE('user');
+    return { error: errorMessage };
+  }
+};
+
+export const deleteUser = async (
+  id: string,
+): Promise<{ error: string | null }> => {
+  try {
+    const api = await apiClient.apiClientSession();
+
+    const { error = null } = await api.delete<{ error: string | null }>(
+      `${API_ROUTE_ENDPOINT.USERS}/${id}`,
+      {
+        baseUrl: DOMAIN,
+      },
+    );
+
+    if (error) {
+      return {
+        error: (JSON.parse(error) as ErrorResponse).error.message,
+      };
+    }
+
+    revalidateTag(API_ENDPOINT.USERS);
+    revalidateTag(API_ENDPOINT.CHEMISTS);
+    revalidateTag(API_ENDPOINT.NOTIFICATIONS);
+    revalidateTag(API_ENDPOINT.APPOINTMENTS);
+
+    return { error: null };
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : EXCEPTION_ERROR_MESSAGE.DELETE('user');
     return { error: errorMessage };
   }
 };

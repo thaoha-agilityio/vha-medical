@@ -18,11 +18,7 @@ import { STATUS_TYPE, UserModel } from '@/types';
 import { AVATAR_THUMBNAIL, ERROR_MESSAGE, SUCCESS_MESSAGE } from '@/constants';
 
 // Services
-import {
-  updateUnpublishAppointment,
-  updateUnpublishNotification,
-  updateUnpublishUser,
-} from '@/services';
+import { deleteUser } from '@/services';
 
 // Hooks
 import { useToast } from '@/context/toast';
@@ -64,7 +60,8 @@ const ChemistCard = ({ id, data, isAdmin, onEdit }: ChemistCardProps) => {
 
   const handleDelete = useCallback(async () => {
     setIsLoading(true);
-    const { error: errorUser } = await updateUnpublishUser(id);
+    const { error: errorUser } = await deleteUser(id);
+
     if (errorUser) {
       openToast({
         message: ERROR_MESSAGE.DELETE('chemist'),
@@ -81,9 +78,6 @@ const ChemistCard = ({ id, data, isAdmin, onEdit }: ChemistCardProps) => {
 
     setIsLoading(false);
     onClosConfirm();
-
-    await updateUnpublishAppointment(id);
-    await updateUnpublishNotification(id);
   }, [id, onClosConfirm, openToast]);
 
   const handleEdit = useCallback(() => {

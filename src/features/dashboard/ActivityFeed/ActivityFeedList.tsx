@@ -38,7 +38,7 @@ const ActivityInfo = memo(({ item, userId = '' }: ActivityInfoProps) => {
     info = {} as InfoModel,
     senderId = {} as APIRelatedResponse<APIResponse<UserModel>>,
   } = item || {};
-  const { startTime = '', content } = info;
+  const { startTime = '', content } = info || {};
 
   const time = formatDateTime(startTime);
   const description = getDescriptionNotification({

@@ -19,6 +19,8 @@ export const API_ROUTE_ENDPOINT = {
   LOGIN: '/api/auth/login',
   SIGNUP: '/api/auth/signup',
   NOTIFICATIONS: '/api/notifications',
+  CHEMISTS: '/api/chemists',
+  USERS: '/api/users',
   APPOINTMENTS: '/api/appointments',
 };
 

@@ -16,7 +16,12 @@ import {
 import { apiClient } from './api';
 
 // Constants
-import { API_ENDPOINT, EXCEPTION_ERROR_MESSAGE } from '@/constants';
+import {
+  API_ENDPOINT,
+  API_ROUTE_ENDPOINT,
+  DOMAIN,
+  EXCEPTION_ERROR_MESSAGE,
+} from '@/constants';
 
 export const addUserToChemists = async (
   payload: ChemistPayload,
@@ -25,10 +30,11 @@ export const addUserToChemists = async (
     const { data, error } = await apiClient.post<{
       data: ChemistResponse;
       error?: string;
-    }>(`${API_ENDPOINT.CHEMISTS}`, {
+    }>(`${API_ROUTE_ENDPOINT.CHEMISTS}`, {
       body: {
         data: payload,
       },
+      baseUrl: DOMAIN,
     });
 
     if (error) {
@@ -58,7 +64,7 @@ export const getChemists = async ({
   try {
     const api = await apiClient.apiClientSession();
     const url = decodeURIComponent(
-      `${API_ENDPOINT.CHEMISTS}?${searchParams.toString()}`,
+      `${API_ROUTE_ENDPOINT.CHEMISTS}?${searchParams.toString()}`,
     );
 
     const { data, meta, error } = await api.get<
@@ -69,6 +75,7 @@ export const getChemists = async ({
         ...options.next,
         revalidate: 3600,
       },
+      baseUrl: DOMAIN,
     });
 
     if (error) {
