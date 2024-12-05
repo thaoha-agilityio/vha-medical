@@ -5,7 +5,7 @@ import { PREVIEW_IMAGE } from '@/constants';
 
 // Components
 import { StatisticCard } from '@/components/ui';
-import { TotalBalance } from '@/features/wallet';
+import { TransactionsHistory } from '@/features/wallet';
 
 // Services
 import { getUserLogged } from '@/services';
@@ -37,11 +37,12 @@ const WalletPage = async () => {
         <StatisticCard title="VHA Token Balance" value={currentBalance} />
         <StatisticCard
           title="Spending on VHA"
-          value={currentSpending}
+          // TODO: Add spending on VHA
+          value={currentSpending || 0}
           customColor="bg-secondary-400"
         />
       </div>
-      <TotalBalance />
+      <TransactionsHistory totalBalance={currentBalance} />
     </div>
   );
 };
