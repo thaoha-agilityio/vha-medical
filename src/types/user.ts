@@ -5,6 +5,7 @@ import {
   MetaResponse,
   NotificationModel,
   SpecialtyModel,
+  TransactionModel,
 } from '@/types';
 
 // Role
@@ -32,6 +33,10 @@ export interface UserModel {
   notificationsSent?: APIRelatedResponse<APIResponse<NotificationModel>[]>;
   appointmentSent?: APIRelatedResponse<APIResponse<AppointmentModel>[]>;
   appointmentReceived?: APIRelatedResponse<APIResponse<AppointmentModel>[]>;
+  transactionSent?: APIRelatedResponse<APIResponse<TransactionModel>[]>;
+  transactionReceived?: APIRelatedResponse<APIResponse<TransactionModel>[]>;
+  currentBalance?: number;
+  currentSpending?: number;
 }
 
 export type UserLogged = Omit<
@@ -42,6 +47,8 @@ export type UserLogged = Omit<
   | 'notificationsSent'
   | 'appointmentSent'
   | 'appointmentReceived'
+  | 'transactionSent'
+  | 'transactionReceived'
 > & {
   id: string;
   avatar?: string;
@@ -50,6 +57,8 @@ export type UserLogged = Omit<
   notificationsSent?: NotificationModel[];
   appointmentSent?: AppointmentModel[];
   appointmentReceived?: AppointmentModel[];
+  transactionSent?: TransactionModel[];
+  transactionReceived?: TransactionModel[];
 };
 
 export type UserSession = {
@@ -82,6 +91,8 @@ export type UserPayload = Omit<
   | 'appointmentSent'
   | 'appointmentReceived'
   | 'specialtyId'
+  | 'transactionSent'
+  | 'transactionReceived'
 > & {
   role: number;
   password?: string;

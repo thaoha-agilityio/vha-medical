@@ -19,8 +19,13 @@ export const StatisticCard = ({
       data-testid="statistic-card"
       className={`absolute top-4 left-0 w-[5px] h-[53px] rounded-r-lg ${customColor}`}
     />
-    <Text customClass="text-primary-300 text-sm font-semibold">{title}</Text>
-    <Text variant="title" customClass="mt-[10px] text-2xl font-semibold">
+    <Text customClass="text-primary-300 text-xs md:text-sm font-semibold">
+      {title}
+    </Text>
+    <Text
+      variant="title"
+      customClass="mt-[10px] text-lg md:text-2xl font-semibold"
+    >
       ${formatNumber(value)}
     </Text>
   </section>
