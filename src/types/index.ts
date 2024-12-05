@@ -8,4 +8,5 @@ export * from './response';
 export * from './searchParams';
 export * from './specialty';
 export * from './table';
+export * from './transaction';
 export * from './user';
