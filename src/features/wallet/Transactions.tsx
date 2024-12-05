@@ -1,7 +1,7 @@
 import { Text, TransactionCard } from '@/components/ui';
 import Pagination from '@/components/ui/Pagination';
 
-const Transactions = () => (
+export const Transactions = () => (
   <div className="w-full">
     <Text variant="title">Notifications</Text>
     {/* TODO: will replace with real data */}
@@ -37,5 +37,3 @@ const Transactions = () => (
     </div>
   </div>
 );
-
-export default Transactions;
