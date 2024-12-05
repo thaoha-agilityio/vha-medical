@@ -3,10 +3,10 @@ import {
   ChemistIcon,
   DashboardIcon,
   DoctorIcon,
-  HospitalIcon,
   MedicineIcon,
   MessageIcon,
   SettingIcon,
+  WalletIcon,
 } from '@/icons';
 
 // Router
@@ -31,7 +31,12 @@ export const NAVBAR_LINKS = [
     icon: ChemistIcon,
     isEnable: true,
   },
-  { name: 'Hospitals', href: '#', icon: HospitalIcon },
+  {
+    name: 'Wallet',
+    href: PRIVATE_ROUTES.WALLET,
+    icon: WalletIcon,
+    isEnable: true,
+  },
   { name: 'Doctors', href: '#', icon: DoctorIcon },
   { name: 'Medicines', href: '#', icon: MedicineIcon },
 ];

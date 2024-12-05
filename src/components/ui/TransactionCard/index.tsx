@@ -6,14 +6,14 @@ import { formatNumber } from '@/utils';
 interface TransactionCardProps {
   receiveName: string;
   amount: number;
-  time: string;
+  timeAgo: string;
   receiveAvatar?: string;
 }
 
 export const TransactionCard = ({
   receiveName,
   amount,
-  time,
+  timeAgo,
   receiveAvatar = '',
 }: TransactionCardProps) => (
   <div className="flex items-center justify-between">
@@ -29,7 +29,7 @@ export const TransactionCard = ({
       </div>
     </div>
     <Text variant="subTitle" size="xs">
-      {time}
+      {timeAgo}
     </Text>
   </div>
 );

@@ -6,7 +6,7 @@ describe('TransactionCard', () => {
     const props = {
       receiveName: 'John Doe',
       amount: 100,
-      time: '2 hours ago',
+      timeAgo: '2 hours ago',
       receiveAvatar: 'https://example.com/avatar.jpg',
     };
 

@@ -18,6 +18,6 @@ type Story = StoryObj<typeof StatisticCard>;
 export const Default: Story = {
   args: {
     title: 'VHA Token Balance',
-    value: '$21,500.00',
+    value: 2150,
   },
 };

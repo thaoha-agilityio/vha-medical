@@ -19,7 +19,7 @@ export const TransactionCardDefault: Story = {
   args: {
     receiveName: 'John Doe',
     amount: 100,
-    time: '2 hours ago',
+    timeAgo: '2 hours ago',
     receiveAvatar: 'https://i.pravatar.cc/150?u=a042581f4e29026024d',
   },
 };
