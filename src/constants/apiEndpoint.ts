@@ -8,6 +8,7 @@ export const API_ENDPOINT = {
   UPLOAD: '/upload',
   CHEMISTS: '/chemists',
   PERMISSIONS: '/users-permissions',
+  TRANSACTIONS: '/transactions',
 };
 
 export const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api`;
@@ -22,6 +23,7 @@ export const API_ROUTE_ENDPOINT = {
   CHEMISTS: '/api/chemists',
   USERS: '/api/users',
   APPOINTMENTS: '/api/appointments',
+  TRANSACTIONS: '/api/transactions',
 };
 
 export const DOMAIN = process.env.DOMAIN;

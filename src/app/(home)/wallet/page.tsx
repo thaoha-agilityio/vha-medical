@@ -42,7 +42,10 @@ const WalletPage = async () => {
           customColor="bg-secondary-400"
         />
       </div>
-      <TransactionsHistory totalBalance={currentBalance} />
+      <TransactionsHistory
+        totalBalance={currentBalance}
+        userLogged={userLogged}
+      />
     </div>
   );
 };

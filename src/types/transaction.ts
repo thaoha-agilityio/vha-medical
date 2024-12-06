@@ -9,6 +9,7 @@ export interface TransactionModel {
   amount: number;
   senderId: APIRelatedResponse<APIResponse<UserModel>>;
   receiverId: APIRelatedResponse<APIResponse<UserModel>>;
+  createdAt?: string;
 }
 
 export type TransactionResponse = APIResponse<TransactionModel>;
