@@ -1,4 +1,9 @@
-import { API_ENDPOINT, EXCEPTION_ERROR_MESSAGE } from '@/constants';
+import {
+  API_ENDPOINT,
+  API_ROUTE_ENDPOINT,
+  DOMAIN,
+  EXCEPTION_ERROR_MESSAGE,
+} from '@/constants';
 
 // Types
 import {
@@ -15,7 +20,7 @@ export const getSpecialties = async ({
 }: FetchDataProps): SpecialtiesDataResponse => {
   try {
     const url = decodeURIComponent(
-      `${API_ENDPOINT.SPECIALTIES}?${searchParams.toString()}`,
+      `${API_ROUTE_ENDPOINT.SPECIALTIES}?${searchParams.toString()}`,
     );
 
     const { data, meta, error } = await apiClient.get<
@@ -26,6 +31,7 @@ export const getSpecialties = async ({
         ...options.next,
         revalidate: 3600,
       },
+      baseUrl: DOMAIN,
     });
 
     if (error) {

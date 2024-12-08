@@ -45,13 +45,12 @@ export const getUsers = async (): Promise<{
   try {
     const api = await apiClient.apiClientSession();
 
-    const url = decodeURIComponent(
-      `${API_ENDPOINT.USERS}?filters[publishedAt][$notNull]=true`,
-    );
+    const url = decodeURIComponent(API_ROUTE_ENDPOINT.USERS);
     const { error = null, ...user } = await api.get<
       UserLogged[] & { error: string | null }
     >(url, {
       next: { revalidate: 3600, tags: [API_ENDPOINT.USERS] },
+      baseUrl: DOMAIN,
     });
 
     const usersArray = Object.values(user) as UserLogged[];
