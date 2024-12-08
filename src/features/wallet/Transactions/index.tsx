@@ -1,39 +1,41 @@
-import { Text, TransactionCard } from '@/components/ui';
-import Pagination from '@/components/ui/Pagination';
+// Services
+import { getTransactions } from '@/services';
 
-export const Transactions = () => (
-  <div className="w-full">
-    <Text variant="title">Notifications</Text>
-    {/* TODO: will replace with real data */}
-    <div className="flex flex-col  gap-[30px] mt-6 w-full">
-      <TransactionCard
-        receiveName={'Josep akbar'}
-        amount={1000}
-        timeAgo={'Just now'}
-      />
-      <TransactionCard
-        receiveName={'Josep akbar'}
-        amount={1000}
-        timeAgo={'Just now'}
-      />
-      <TransactionCard
-        receiveName={'Josep akbar'}
-        amount={1000}
-        timeAgo={'Just now'}
-      />
-      <TransactionCard
-        receiveName={'Josep akbar'}
-        amount={1000}
-        timeAgo={'Just now'}
-      />
-      <TransactionCard
-        receiveName={'Josep akbar'}
-        amount={1000}
-        timeAgo={'Just now'}
-      />
-    </div>
-    <div className="flex flex-col items-center">
-      <Pagination classNames={{ base: 'mt-4' }} initialPage={1} total={3} />
-    </div>
-  </div>
-);
+// Components
+import { TransactionsHistory } from './TransactionsHistory';
+
+// Types
+import { DIRECTION, MetaResponse, UserLogged } from '@/types';
+
+// Constants
+import { PAGE_LIMIT_TRANSACTIONS } from '@/constants';
+
+interface TransactionsProps extends MetaResponse {
+  userLogged: UserLogged | null;
+}
+
+export const Transactions = async ({ userLogged }: TransactionsProps) => {
+  const { id: userId = '' } = userLogged || {};
+  const searchParamsAPI = () => {
+    const params = new URLSearchParams();
+    params.set('populate[0]', 'receiverId');
+    params.set('populate[1]', 'senderId');
+    params.set('pagination[limit]', `${PAGE_LIMIT_TRANSACTIONS}`);
+    params.set('filters[$or][0][senderId][id][$eq]', `${userId}`);
+    params.set('filters[$or][1][receiverId][id][$eq]', `${userId}`);
+    params.set('sort[0]', `createdAt:${DIRECTION.DESC}`);
+
+    return params;
+  };
+  const { transactions, ...meta } = await getTransactions({
+    searchParams: searchParamsAPI(),
+  });
+
+  return (
+    <TransactionsHistory
+      transactions={transactions}
+      pagination={meta?.pagination}
+      userId={userId}
+    />
+  );
+};

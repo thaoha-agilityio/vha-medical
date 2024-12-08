@@ -5,4 +5,5 @@ export * from './chemists';
 export * from './image';
 export * from './notification';
 export * from './specialty';
+export * from './transaction';
 export * from './user';

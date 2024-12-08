@@ -1,11 +1,13 @@
-import { Text } from '@/components/ui';
 import { Skeleton } from '@nextui-org/react';
+import { Text } from '@/components/ui';
 
-export const TransactionsSkeleton = () => (
-  <div className="w-full">
-    <Text variant="title">Notifications</Text>
+// Constants
+import { PAGE_LIMIT_TRANSACTIONS } from '@/constants';
+
+export const TransactionListSkeleton = () => (
+  <>
     <div className="flex flex-col  gap-[30px] mt-6 w-full">
-      {Array(5)
+      {Array(PAGE_LIMIT_TRANSACTIONS)
         .fill(0)
         .map((_, index) => (
           <div className="flex items-center justify-between" key={index}>
@@ -24,5 +26,12 @@ export const TransactionsSkeleton = () => (
     <div className="flex flex-col items-center">
       <Skeleton className="w-[160px] h-8 rounded-medium mt-6" />
     </div>
+  </>
+);
+
+export const TransactionsSkeleton = () => (
+  <div className="w-full">
+    <Text variant="title">Notifications</Text>
+    <TransactionListSkeleton />
   </div>
 );

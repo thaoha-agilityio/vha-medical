@@ -15,12 +15,13 @@ exports[`TransactionCard renders the receiveName, amount, time, and avatar corre
       >
         <img
           alt=""
+          class="aspect-square"
           data-nimg="1"
           decoding="async"
           fetchpriority="high"
           height="48"
-          src="http://localhost/_next/image?url=https%3A%2F%2Fexample.com%2Favatar.jpg&w=96&q=75"
-          srcset="/_next/image?url=https%3A%2F%2Fexample.com%2Favatar.jpg&w=48&q=75 1x, /_next/image?url=https%3A%2F%2Fexample.com%2Favatar.jpg&w=96&q=75 2x"
+          src="http://localhost/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75"
+          srcset="/_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=48&q=75 1x, /_next/image?url=%2Fimages%2Favatar-thumbnail.webp&w=96&q=75 2x"
           style="color: transparent; object-fit: cover; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
           width="48"
         />
@@ -29,20 +30,19 @@ exports[`TransactionCard renders the receiveName, amount, time, and avatar corre
         <p
           class="text-foreground text-sm mb-2 font-semibold"
         >
-          John Doe
+          Alex Stanton
         </p>
         <p
           class="text-primary-300 font-normal text-xs"
         >
-          Just sent you $
-          100.00
+          Sent you $1,000.00
         </p>
       </div>
     </div>
     <p
       class="text-primary-300 font-normal text-xs"
     >
-      2 hours ago
+      a month ago
     </p>
   </div>
 </div>

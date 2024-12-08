@@ -7,4 +7,5 @@ export * from './notification';
 export * from './options';
 export * from './profile';
 export * from './table';
+export * from './transactions';
 export * from './user';
