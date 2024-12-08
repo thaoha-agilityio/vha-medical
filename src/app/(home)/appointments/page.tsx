@@ -102,8 +102,6 @@ const AppointmentPage = async ({
     searchParamsAPI.set('filters[status][$eq]', `${valueStatus}`);
   }
 
-  console.log('token====', token);
-
   return (
     <>
       <div className="flex justify-between gap-10 my-8">
