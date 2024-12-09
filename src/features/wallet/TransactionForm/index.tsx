@@ -27,20 +27,27 @@ const selectCustomStyle = {
 };
 
 interface TransactionFormProps {
+  userLogged: UserLogged | null;
   onClose: () => void;
 }
 
-export const TransactionForm = ({ onClose }: TransactionFormProps) => {
+export const TransactionForm = ({
+  onClose,
+  userLogged,
+}: TransactionFormProps) => {
+  const { id: userId = '', currentBalance = 0 } = userLogged || {};
   const {
     control,
     handleSubmit,
-    getValues,
     clearErrors,
     formState: { errors, isValid, isLoading, isDirty },
     trigger,
   } = useForm<TransactionPayload>({
     mode: 'onBlur',
     reValidateMode: 'onBlur',
+    defaultValues: {
+      senderId: userId.toString(),
+    },
   });
   const [users, setUsers] = useState<UserLogged[]>([]);
 
@@ -61,24 +68,24 @@ export const TransactionForm = ({ onClose }: TransactionFormProps) => {
   };
 
   const TRANSACTION_FORM_VALIDATION = {
-    SENDER_ID: {
-      required: FORM_VALIDATION_MESSAGE.REQUIRED('The sender'),
-      validate: {
-        notSameAsSender: (value: string) =>
-          value !== getValues('receiverId') ||
-          FORM_VALIDATION_MESSAGE.NOT_SAME_AS_SENDER,
-      },
-    },
     RECEIVER_ID: {
       required: FORM_VALIDATION_MESSAGE.REQUIRED('The receiver'),
       validate: {
         notSameAsSender: (value: string) =>
-          value !== getValues('senderId') ||
+          value !== userId.toString() ||
           FORM_VALIDATION_MESSAGE.NOT_SAME_AS_SENDER,
       },
     },
     AMOUNT: {
       required: FORM_VALIDATION_MESSAGE.REQUIRED('Amount'),
+      min: {
+        value: 1,
+        message: FORM_VALIDATION_MESSAGE.AMOUNT_GREATER_THAN_0,
+      },
+      max: {
+        value: currentBalance,
+        message: FORM_VALIDATION_MESSAGE.AMOUNT_GREATER_THAN_BALANCE,
+      },
     },
   };
 
@@ -95,7 +102,7 @@ export const TransactionForm = ({ onClose }: TransactionFormProps) => {
   );
 
   const onSubmit = (data: TransactionPayload) => {
-    data;
+    console.log('data', data);
   };
 
   return (
@@ -106,32 +113,6 @@ export const TransactionForm = ({ onClose }: TransactionFormProps) => {
         </Text>
 
         <div className="mt-10">
-          <Controller
-            control={control}
-            name="senderId"
-            rules={TRANSACTION_FORM_VALIDATION.SENDER_ID}
-            render={({
-              field: { name, value, onChange, onBlur: _onBlur, ...rest },
-              fieldState: { error },
-            }) => (
-              <Select
-                {...rest}
-                name={name}
-                value={value}
-                label="Sender"
-                placeholder="Select sender"
-                labelPlacement="outside"
-                variant="bordered"
-                classNames={selectCustomStyle}
-                options={OPTION_USERS}
-                isInvalid={!!error?.message}
-                errorMessage={error?.message}
-                onChange={onChange}
-                onClose={handleCloseSelect(name)}
-              />
-            )}
-          />
-
           <Controller
             control={control}
             name="receiverId"
@@ -162,6 +143,7 @@ export const TransactionForm = ({ onClose }: TransactionFormProps) => {
           <Controller
             name="amount"
             control={control}
+            rules={TRANSACTION_FORM_VALIDATION.AMOUNT}
             render={({
               field: { name, onChange, ...rest },
               fieldState: { error },
@@ -172,13 +154,18 @@ export const TransactionForm = ({ onClose }: TransactionFormProps) => {
                 label="Amount"
                 labelPlacement="outside"
                 name={name}
-                placeholder="Please enter amount"
                 type="number"
                 size="sm"
                 isDisabled={isLoading}
                 isInvalid={!!error?.message}
                 errorMessage={error?.message}
                 onChange={handleInputChange(name, onChange)}
+                placeholder="0.00"
+                startContent={
+                  <div className="pointer-events-none flex items-center">
+                    <span className="text-sm">$</span>
+                  </div>
+                }
               />
             )}
           />

@@ -9,8 +9,17 @@ import { ExportIcon } from '@/icons';
 // Utils
 import { formatNumber } from '@/utils';
 import { TransactionModal } from '../TransactionModal';
+import { UserLogged } from '@/types';
 
-export const TotalBalance = ({ totalBalance }: { totalBalance: number }) => {
+interface TotalBalanceProps {
+  totalBalance: number;
+  userLogged: UserLogged | null;
+}
+
+export const TotalBalance = ({
+  totalBalance,
+  userLogged,
+}: TotalBalanceProps) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   return (
@@ -33,7 +42,13 @@ export const TotalBalance = ({ totalBalance }: { totalBalance: number }) => {
         Send
       </Button>
 
-      {isOpen && <TransactionModal isOpen={isOpen} onClose={onClose} />}
+      {isOpen && (
+        <TransactionModal
+          isOpen={isOpen}
+          onClose={onClose}
+          userLogged={userLogged}
+        />
+      )}
     </>
   );
 };
