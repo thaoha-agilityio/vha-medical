@@ -22,11 +22,12 @@ export const getUserLogged = async (
   try {
     const { error = null, ...user } = await apiClient.get<
       UserLogged & { error: string | null }
-    >(`${API_ENDPOINT.USERS}/me?populate=*`, {
+    >(`${API_ROUTE_ENDPOINT.USER_LOGGED}`, {
       headers: {
         Authorization: `Bearer ${jwt}`,
       },
       next: { revalidate: 3600, tags: [API_ENDPOINT.USERS, 'logged'] },
+      baseUrl: DOMAIN,
     });
     return { user: user, error };
   } catch (error) {
@@ -72,9 +73,10 @@ export const getUsers = async (): Promise<{
 export const getUserRoles = async (): Promise<RolesResponse> => {
   try {
     const { roles, error = null } = await apiClient.get<RolesResponse>(
-      `${API_ENDPOINT.PERMISSIONS}/roles`,
+      API_ROUTE_ENDPOINT.USER_ROLE,
       {
         next: { revalidate: 3600, tags: [API_ENDPOINT.PERMISSIONS] },
+        baseUrl: DOMAIN,
       },
     );
 
