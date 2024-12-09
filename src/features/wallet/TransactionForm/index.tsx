@@ -10,7 +10,12 @@ import { Button, Input, Select, Text } from '@/components/ui';
 import { STATUS_TYPE, TransactionPayload, UserLogged } from '@/types';
 
 // Services
-import { addTransaction, getUsers } from '@/services';
+import {
+  addTransaction,
+  getUsers,
+  updateTotalBalanceByReceiveMoney,
+  updateTotalBalanceBySendMoney,
+} from '@/services';
 
 // Utils
 import { clearErrorOnChange, transformUsers } from '@/utils';
@@ -132,6 +137,15 @@ export const TransactionForm = ({
       message: SUCCESS_MESSAGE.CREATE('transaction'),
       type: STATUS_TYPE.SUCCESS,
     });
+
+    const currentBalanceOfSender = currentBalance - data.amount;
+    const currentBalanceOfReceive = currentBalance + data.amount;
+
+    await updateTotalBalanceBySendMoney(userId, currentBalanceOfSender);
+    await updateTotalBalanceByReceiveMoney(
+      data.receiverId,
+      currentBalanceOfReceive,
+    );
 
     setIsPending(false);
     onClose();

@@ -350,9 +350,9 @@ export const deleteUser = async (
   }
 };
 
-export const updateTotalBalanceFromSend = async (
+export const updateTotalBalanceBySendMoney = async (
   id: string,
-  user: UserPayload,
+  currentBalance: number,
 ): Promise<{ error: string | null }> => {
   try {
     const api = await apiClient.apiClientSession();
@@ -361,9 +361,7 @@ export const updateTotalBalanceFromSend = async (
       `${API_ROUTE_ENDPOINT.SEND_MONEY}/${id}`,
       {
         body: {
-          data: {
-            ...user,
-          },
+          currentBalance,
         },
         baseUrl: DOMAIN,
       },
@@ -375,7 +373,42 @@ export const updateTotalBalanceFromSend = async (
       };
     }
 
-    revalidateTag(API_ENDPOINT.APPOINTMENTS);
+    revalidateTag(API_ENDPOINT.USERS);
+
+    return { error: null };
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : EXCEPTION_ERROR_MESSAGE.UPDATE('user');
+    return { error: errorMessage };
+  }
+};
+
+export const updateTotalBalanceByReceiveMoney = async (
+  id: string,
+  currentBalance: number,
+): Promise<{ error: string | null }> => {
+  try {
+    const api = await apiClient.apiClientSession();
+
+    const { error = null } = await api.put<{ error: string | null }>(
+      `${API_ROUTE_ENDPOINT.RECEIVE_MONEY}/${id}`,
+      {
+        body: {
+          currentBalance,
+        },
+        baseUrl: DOMAIN,
+      },
+    );
+
+    if (error) {
+      return {
+        error: (JSON.parse(error) as ErrorResponse).error.message,
+      };
+    }
+
+    revalidateTag(API_ENDPOINT.USERS);
 
     return { error: null };
   } catch (error) {
