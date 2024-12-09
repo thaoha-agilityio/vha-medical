@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 // Constants
-import { PREVIEW_IMAGE } from '@/constants';
+import { PAGE_DEFAULT, PREVIEW_IMAGE } from '@/constants';
 
 // Components
 import { StatisticCard } from '@/components/ui';
@@ -10,6 +10,7 @@ import { TransactionsHistory } from '@/features/wallet';
 // Services
 import { getUserLogged } from '@/services';
 import { auth } from '@/config/auth';
+import { SearchParams } from '@/types';
 
 export const metadata: Metadata = {
   title: 'Wallet',
@@ -26,10 +27,15 @@ export const metadata: Metadata = {
   },
 };
 
-const WalletPage = async () => {
+const WalletPage = async ({
+  searchParams,
+}: {
+  searchParams?: SearchParams;
+}) => {
   const { token = '' } = (await auth())?.user || {};
   const { user: userLogged } = await getUserLogged(token);
   const { currentBalance = 0, currentSpending = 0 } = userLogged || {};
+  const { page = PAGE_DEFAULT } = searchParams || {};
 
   return (
     <div className="flex flex-col xl:flex-row xl:gap-4 mt-8 justify-between w-full">
@@ -45,6 +51,7 @@ const WalletPage = async () => {
       <TransactionsHistory
         totalBalance={currentBalance}
         userLogged={userLogged}
+        page={page}
       />
     </div>
   );

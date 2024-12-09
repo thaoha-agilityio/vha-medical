@@ -1,3 +1,7 @@
+'use server';
+
+import { revalidateTag } from 'next/cache';
+
 // Constants
 import {
   API_ENDPOINT,
@@ -12,10 +16,13 @@ import {
   ErrorResponse,
   TransactionsDataResponse,
   TransactionsResponse,
+  TransactionPayload,
+  TransactionDataResponse,
+  TransactionResponse,
 } from '@/types';
 
-// Api
-import { apiClient } from './api';
+// Services
+import { apiClient } from '@/services';
 
 export const getTransactions = async ({
   searchParams = new URLSearchParams(),
@@ -52,8 +59,42 @@ export const getTransactions = async ({
     const errorMessage =
       error instanceof Error
         ? error.message
-        : EXCEPTION_ERROR_MESSAGE.GET('appointments');
+        : EXCEPTION_ERROR_MESSAGE.GET('transactions');
 
     return { transactions: [], error: errorMessage };
+  }
+};
+
+export const addTransaction = async (
+  transaction: TransactionPayload,
+): Promise<TransactionDataResponse> => {
+  try {
+    const api = await apiClient.apiClientSession();
+
+    const { data, error } = await api.post<{
+      data: TransactionResponse;
+      error?: string;
+    }>(API_ROUTE_ENDPOINT.TRANSACTIONS, {
+      body: {
+        data: transaction,
+      },
+      baseUrl: DOMAIN,
+    });
+
+    if (error) {
+      const errorResponse = JSON.parse(error) as ErrorResponse;
+      return { transaction: null, error: errorResponse.error.message };
+    }
+
+    revalidateTag(API_ENDPOINT.TRANSACTIONS);
+
+    return { transaction: data, error: null };
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : EXCEPTION_ERROR_MESSAGE.ADD('transactions');
+
+    return { transaction: null, error: errorMessage };
   }
 };
