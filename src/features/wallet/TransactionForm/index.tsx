@@ -7,16 +7,21 @@ import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { Button, Input, Select, Text } from '@/components/ui';
 
 // Types
-import { TransactionPayload, UserLogged } from '@/types';
+import { STATUS_TYPE, TransactionPayload, UserLogged } from '@/types';
 
 // Services
-import { getUsers } from '@/services';
+import { addTransaction, getUsers, receiveMoney, sendMoney } from '@/services';
 
 // Utils
 import { clearErrorOnChange, transformUsers } from '@/utils';
 
 // Constants
-import { FORM_VALIDATION_MESSAGE } from '@/constants';
+import {
+  ERROR_MESSAGE,
+  FORM_VALIDATION_MESSAGE,
+  SUCCESS_MESSAGE,
+} from '@/constants';
+import { useToast } from '@/context/toast';
 
 const selectCustomStyle = {
   mainWrapper: 'h-16',
@@ -50,6 +55,8 @@ export const TransactionForm = ({
     },
   });
   const [users, setUsers] = useState<UserLogged[]>([]);
+  const [isPending, setIsPending] = useState(false);
+  const openToast = useToast();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -101,8 +108,39 @@ export const TransactionForm = ({
     [clearErrors, errors],
   );
 
-  const onSubmit = (data: TransactionPayload) => {
-    console.log('data', data);
+  const onSubmit = async (data: TransactionPayload) => {
+    setIsPending(true);
+
+    const formData = {
+      ...data,
+      senderId: userId,
+    };
+
+    const currentBalanceOfSender = currentBalance - data.amount;
+    const currentBalanceOfReceive = currentBalance + data.amount;
+
+    const { error } = await addTransaction(formData);
+
+    await sendMoney(userId, currentBalanceOfSender);
+    await receiveMoney(data.receiverId, currentBalanceOfReceive);
+
+    if (error) {
+      openToast({
+        message: ERROR_MESSAGE.CREATE('transaction', error),
+        type: STATUS_TYPE.ERROR,
+      });
+      setIsPending(false);
+
+      return;
+    }
+
+    openToast({
+      message: SUCCESS_MESSAGE.CREATE('transaction'),
+      type: STATUS_TYPE.SUCCESS,
+    });
+
+    setIsPending(false);
+    onClose();
   };
 
   return (
@@ -145,7 +183,7 @@ export const TransactionForm = ({
             control={control}
             rules={TRANSACTION_FORM_VALIDATION.AMOUNT}
             render={({
-              field: { name, onChange, ...rest },
+              field: { name, onChange, value, ...rest },
               fieldState: { error },
             }) => (
               <Input
@@ -156,11 +194,12 @@ export const TransactionForm = ({
                 name={name}
                 type="number"
                 size="sm"
-                isDisabled={isLoading}
+                isDisabled={isLoading || isPending}
                 isInvalid={!!error?.message}
                 errorMessage={error?.message}
                 onChange={handleInputChange(name, onChange)}
                 placeholder="0.00"
+                value={value?.toString() || ''}
                 startContent={
                   <div className="pointer-events-none flex items-center">
                     <span className="text-sm">$</span>
@@ -181,8 +220,8 @@ export const TransactionForm = ({
             Cancel
           </Button>
           <Button
-            isDisabled={!isValid || !isDirty}
-            isLoading={isLoading}
+            isDisabled={!isValid || !isDirty || isPending}
+            isLoading={isLoading || isPending}
             type="submit"
           >
             Submit

@@ -349,3 +349,73 @@ export const deleteUser = async (
     return { error: errorMessage };
   }
 };
+
+export const sendMoney = async (
+  id: string,
+  currentBalance: number,
+): Promise<{ error: string | null }> => {
+  try {
+    const api = await apiClient.apiClientSession();
+
+    const { error = null } = await api.put<{ error: string | null }>(
+      `${API_ROUTE_ENDPOINT.SEND_MONEY}/${id}`,
+      {
+        body: {
+          currentBalance,
+        },
+        baseUrl: DOMAIN,
+      },
+    );
+
+    if (error) {
+      return {
+        error: (JSON.parse(error) as ErrorResponse).error.message,
+      };
+    }
+
+    revalidateTag(API_ENDPOINT.USERS);
+
+    return { error: null };
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : EXCEPTION_ERROR_MESSAGE.UPDATE('user');
+    return { error: errorMessage };
+  }
+};
+
+export const receiveMoney = async (
+  id: string,
+  currentBalance: number,
+): Promise<{ error: string | null }> => {
+  try {
+    const api = await apiClient.apiClientSession();
+
+    const { error = null } = await api.put<{ error: string | null }>(
+      `${API_ROUTE_ENDPOINT.RECEIVE_MONEY}/${id}`,
+      {
+        body: {
+          currentBalance,
+        },
+        baseUrl: DOMAIN,
+      },
+    );
+
+    if (error) {
+      return {
+        error: (JSON.parse(error) as ErrorResponse).error.message,
+      };
+    }
+
+    revalidateTag(API_ENDPOINT.USERS);
+
+    return { error: null };
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : EXCEPTION_ERROR_MESSAGE.UPDATE('user');
+    return { error: errorMessage };
+  }
+};

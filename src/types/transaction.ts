@@ -33,5 +33,5 @@ export type TransactionPayload = Partial<
 > & {
   senderId: string;
   receiverId: string;
-  amount: string;
+  amount: number;
 };
