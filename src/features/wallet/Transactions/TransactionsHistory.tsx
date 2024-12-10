@@ -12,7 +12,7 @@ import { PAGE_DEFAULT } from '@/constants';
 
 // Components
 import { Text, TransactionCard } from '@/components/ui';
-import { TransactionsSkeleton } from './TransactionSkeleton';
+import { TransactionListSkeleton } from './TransactionSkeleton';
 const Pagination = dynamic(() => import('@/components/ui/Pagination'));
 
 type TransactionsHistoryProps = {
@@ -59,7 +59,7 @@ export const TransactionsHistory = ({
       <Text variant="title">Notifications</Text>
 
       {isPending ? (
-        <TransactionsSkeleton />
+        <TransactionListSkeleton />
       ) : (
         <>
           <div className="flex flex-col gap-[30px] mt-6 w-full">
@@ -81,8 +81,7 @@ export const TransactionsHistory = ({
               </Text>
             )}
           </div>
-
-          {!!pagination && pageCount > 1 && (
+          {!!pagination && pagination.pageCount > 1 && (
             <div className="flex flex-col items-center">
               <Suspense>
                 <Pagination

@@ -98,4 +98,5 @@ export type UserPayload = Omit<
   password?: string;
   specialtyId?: number | null;
   avatar?: string;
+  currentBalance?: number | null;
 };

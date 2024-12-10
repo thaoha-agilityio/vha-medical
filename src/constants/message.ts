@@ -23,6 +23,8 @@ export const FORM_VALIDATION_MESSAGE = {
     unit: string;
   }) => `Max ${item} size is ${size}${unit}`,
   ACCEPTED_FORMATS: 'Only .jpg, .jpeg, .png and .webp formats are supported.',
+  AMOUNT_GREATER_THAN_0: 'Amount must be greater than $0.00',
+  AMOUNT_GREATER_THAN_BALANCE: 'Amount must be less than balance',
 };
 
 export const ERROR_MESSAGE = {

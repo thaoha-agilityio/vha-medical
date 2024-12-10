@@ -22,11 +22,12 @@ export const getUserLogged = async (
   try {
     const { error = null, ...user } = await apiClient.get<
       UserLogged & { error: string | null }
-    >(`${API_ENDPOINT.USERS}/me?populate=*`, {
+    >(`${API_ROUTE_ENDPOINT.USER_LOGGED}`, {
       headers: {
         Authorization: `Bearer ${jwt}`,
       },
       next: { revalidate: 3600, tags: [API_ENDPOINT.USERS, 'logged'] },
+      baseUrl: DOMAIN,
     });
     return { user: user, error };
   } catch (error) {
@@ -71,9 +72,10 @@ export const getUsers = async (): Promise<{
 export const getUserRoles = async (): Promise<RolesResponse> => {
   try {
     const { roles, error = null } = await apiClient.get<RolesResponse>(
-      `${API_ENDPOINT.PERMISSIONS}/roles`,
+      API_ROUTE_ENDPOINT.USER_ROLE,
       {
         next: { revalidate: 3600, tags: [API_ENDPOINT.PERMISSIONS] },
+        baseUrl: DOMAIN,
       },
     );
 
@@ -343,6 +345,76 @@ export const deleteUser = async (
       error instanceof Error
         ? error.message
         : EXCEPTION_ERROR_MESSAGE.DELETE('user');
+    return { error: errorMessage };
+  }
+};
+
+export const sendMoney = async (
+  id: string,
+  currentBalance: number,
+): Promise<{ error: string | null }> => {
+  try {
+    const api = await apiClient.apiClientSession();
+
+    const { error = null } = await api.put<{ error: string | null }>(
+      `${API_ROUTE_ENDPOINT.SEND_MONEY}/${id}`,
+      {
+        body: {
+          currentBalance,
+        },
+        baseUrl: DOMAIN,
+      },
+    );
+
+    if (error) {
+      return {
+        error: (JSON.parse(error) as ErrorResponse).error.message,
+      };
+    }
+
+    revalidateTag(API_ENDPOINT.USERS);
+
+    return { error: null };
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : EXCEPTION_ERROR_MESSAGE.UPDATE('user');
+    return { error: errorMessage };
+  }
+};
+
+export const receiveMoney = async (
+  id: string,
+  currentBalance: number,
+): Promise<{ error: string | null }> => {
+  try {
+    const api = await apiClient.apiClientSession();
+
+    const { error = null } = await api.put<{ error: string | null }>(
+      `${API_ROUTE_ENDPOINT.RECEIVE_MONEY}/${id}`,
+      {
+        body: {
+          currentBalance,
+        },
+        baseUrl: DOMAIN,
+      },
+    );
+
+    if (error) {
+      return {
+        error: (JSON.parse(error) as ErrorResponse).error.message,
+      };
+    }
+
+    revalidateTag(API_ENDPOINT.USERS);
+
+    return { error: null };
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : EXCEPTION_ERROR_MESSAGE.UPDATE('user');
     return { error: errorMessage };
   }
 };

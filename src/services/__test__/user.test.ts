@@ -45,7 +45,7 @@ describe('User services test cases', () => {
     expect(result).toEqual({ user: MOCK_USERS_LOGGED[0], error: null });
 
     expect(apiGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}/me?populate=*`,
+      `${API_ROUTE_ENDPOINT.USER_LOGGED}`,
       expect.anything(),
     );
   });
@@ -58,7 +58,7 @@ describe('User services test cases', () => {
     expect(result).toEqual({ user: {}, error: 'Something went wrong' });
 
     expect(apiGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}/me?populate=*`,
+      `${API_ROUTE_ENDPOINT.USER_LOGGED}`,
       expect.anything(),
     );
   });
@@ -80,7 +80,7 @@ describe('User services test cases', () => {
     });
 
     expect(apiGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}/me?populate=*`,
+      `${API_ROUTE_ENDPOINT.USER_LOGGED}`,
       expect.anything(),
     );
   });
@@ -167,7 +167,7 @@ describe('User services test cases', () => {
     });
 
     expect(apiGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.PERMISSIONS}/roles`,
+      `${API_ROUTE_ENDPOINT.USER_ROLE}`,
       expect.anything(),
     );
   });
@@ -186,7 +186,7 @@ describe('User services test cases', () => {
     });
 
     expect(apiGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.PERMISSIONS}/roles`,
+      `${API_ROUTE_ENDPOINT.USER_ROLE}`,
       expect.anything(),
     );
   });
@@ -211,7 +211,7 @@ describe('User services test cases', () => {
     });
 
     expect(apiGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.PERMISSIONS}/roles`,
+      `${API_ROUTE_ENDPOINT.USER_ROLE}`,
       expect.anything(),
     );
   });

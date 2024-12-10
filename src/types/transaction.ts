@@ -29,8 +29,9 @@ export type TransactionsResponse = {
 };
 
 export type TransactionPayload = Partial<
-  Omit<TransactionModel, 'senderId' | 'receiverId'>
+  Omit<TransactionModel, 'senderId' | 'receiverId' | 'amount'>
 > & {
-  senderId?: string;
-  receiverId?: string;
+  senderId: string;
+  receiverId: string;
+  amount: number;
 };
