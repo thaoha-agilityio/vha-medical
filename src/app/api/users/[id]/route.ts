@@ -48,3 +48,22 @@ export async function DELETE(
 
   return Response.json({});
 }
+
+export async function GET(
+  req: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const token = req.headers.get('Authorization') || '';
+  const id = (await params).id;
+
+  const res = await apiClient.get<UserModel & { error: string | null }>(
+    `${API_ENDPOINT.USERS}/${id}`,
+    {
+      headers: {
+        Authorization: token,
+      },
+    },
+  );
+
+  return Response.json(res);
+}

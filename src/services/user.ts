@@ -418,3 +418,27 @@ export const receiveMoney = async (
     return { error: errorMessage };
   }
 };
+
+export const getUser = async (
+  id: string,
+): Promise<{ user: UserModel | null; error: string | null }> => {
+  try {
+    const api = await apiClient.apiClientSession();
+
+    const url = decodeURIComponent(`${API_ROUTE_ENDPOINT.USERS}/${id}`);
+    const { error = null, ...user } = await api.get<
+      UserModel & { error?: string | null }
+    >(url, {
+      baseUrl: DOMAIN,
+    });
+
+    return { user: error ? null : user, error };
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : EXCEPTION_ERROR_MESSAGE.GET('user');
+
+    return { user: null, error: errorMessage };
+  }
+};

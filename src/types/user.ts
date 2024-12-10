@@ -35,7 +35,7 @@ export interface UserModel {
   appointmentReceived?: APIRelatedResponse<APIResponse<AppointmentModel>[]>;
   transactionSent?: APIRelatedResponse<APIResponse<TransactionModel>[]>;
   transactionReceived?: APIRelatedResponse<APIResponse<TransactionModel>[]>;
-  currentBalance?: number;
+  currentBalance: number;
   currentSpending?: number;
 }
 

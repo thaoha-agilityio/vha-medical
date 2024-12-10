@@ -43,7 +43,6 @@ const WalletPage = async ({
         <StatisticCard title="VHA Token Balance" value={currentBalance} />
         <StatisticCard
           title="Spending on VHA"
-          // TODO: Add spending on VHA
           value={currentSpending || 0}
           customColor="bg-secondary-400"
         />
