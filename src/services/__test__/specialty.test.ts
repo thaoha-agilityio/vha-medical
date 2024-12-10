@@ -1,7 +1,7 @@
 import { MOCK_SPECIALTIES } from '@/mocks';
 import { apiClient } from '../api';
 import { getSpecialties } from '../specialty';
-import { API_ENDPOINT, EXCEPTION_ERROR_MESSAGE } from '@/constants';
+import { API_ROUTE_ENDPOINT, EXCEPTION_ERROR_MESSAGE } from '@/constants';
 
 describe('Specialty service test cases', () => {
   afterEach(() => {
@@ -24,7 +24,7 @@ describe('Specialty service test cases', () => {
     });
 
     expect(mockGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.SPECIALTIES}?`,
+      `${API_ROUTE_ENDPOINT.SPECIALTIES}?`,
       expect.anything(),
     );
   });

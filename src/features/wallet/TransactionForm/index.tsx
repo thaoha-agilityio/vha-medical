@@ -10,7 +10,13 @@ import { Button, Input, Select, Text } from '@/components/ui';
 import { STATUS_TYPE, TransactionPayload, UserLogged } from '@/types';
 
 // Services
-import { addTransaction, getUsers, receiveMoney, sendMoney } from '@/services';
+import {
+  addTransaction,
+  getUser,
+  getUsers,
+  receiveMoney,
+  sendMoney,
+} from '@/services';
 
 // Utils
 import { clearErrorOnChange, transformUsers } from '@/utils';
@@ -115,14 +121,14 @@ export const TransactionForm = ({
       ...data,
       senderId: userId,
     };
+    const { user: receiver } = await getUser(data.receiverId);
+    const { currentBalance: currentBalanceOfReceive = 0 } = receiver || {};
 
-    const currentBalanceOfSender = currentBalance - data.amount;
-    const currentBalanceOfReceive = currentBalance + data.amount;
+    const money = Number(data.amount);
+    const moneySender = currentBalance - money;
+    const moneyReceive = currentBalanceOfReceive + money;
 
     const { error } = await addTransaction(formData);
-
-    await sendMoney(userId, currentBalanceOfSender);
-    await receiveMoney(data.receiverId, currentBalanceOfReceive);
 
     if (error) {
       openToast({
@@ -141,6 +147,9 @@ export const TransactionForm = ({
 
     setIsPending(false);
     onClose();
+
+    await sendMoney(userId, moneySender);
+    await receiveMoney(data.receiverId, moneyReceive);
   };
 
   return (

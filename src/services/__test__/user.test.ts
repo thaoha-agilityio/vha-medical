@@ -98,7 +98,7 @@ describe('User services test cases', () => {
     });
 
     expect(mockGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}?filters[publishedAt][$notNull]=true`,
+      `${API_ROUTE_ENDPOINT.USERS}`,
       expect.anything(),
     );
   });
@@ -119,7 +119,7 @@ describe('User services test cases', () => {
     });
 
     expect(mockGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}?filters[publishedAt][$notNull]=true`,
+      `${API_ROUTE_ENDPOINT.USERS}`,
       expect.anything(),
     );
   });
@@ -148,7 +148,7 @@ describe('User services test cases', () => {
     });
 
     expect(mockGet).toHaveBeenCalledWith(
-      `${API_ENDPOINT.USERS}?filters[publishedAt][$notNull]=true`,
+      `${API_ROUTE_ENDPOINT.USERS}`,
       expect.anything(),
     );
   });
