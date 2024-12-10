@@ -350,7 +350,7 @@ export const deleteUser = async (
   }
 };
 
-export const updateTotalBalanceBySendMoney = async (
+export const sendMoney = async (
   id: string,
   currentBalance: number,
 ): Promise<{ error: string | null }> => {
@@ -385,7 +385,7 @@ export const updateTotalBalanceBySendMoney = async (
   }
 };
 
-export const updateTotalBalanceByReceiveMoney = async (
+export const receiveMoney = async (
   id: string,
   currentBalance: number,
 ): Promise<{ error: string | null }> => {
